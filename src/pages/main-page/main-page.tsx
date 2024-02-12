@@ -45,6 +45,7 @@ export const MainPage: React.FC = () => {
         
             <Layout className={style.container}>
                 <Sider
+                collapsedWidth={64}
                 width={screenWidth=== 360?106:208}
                     trigger={<CastomTrigger />}
                     collapsible

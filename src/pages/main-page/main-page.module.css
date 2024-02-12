@@ -55,10 +55,9 @@
 }
 
 :global .ant-card-head-title {
-   max-width: 180px;
-   text-overflow: unset;
    white-space:wrap;
    word-wrap: break-word;
+   overflow: unset;
    overflow-wrap: break-word;
 }
 
@@ -88,6 +87,11 @@
    border:none;
    color:#2F54EB;
 }
+
+:global .ant-card-head {
+   width: 100%;
+      }
+
 :global .ant-card-head-title {
    font-family:'Inter', sans-serif;
    max-width: 200px;
@@ -129,10 +133,7 @@
       display: none;
    }
    
-   :global .ant-card-head-title {
-
-   }
-
+  
    .ant-card {
       width: 300px; 
     }
