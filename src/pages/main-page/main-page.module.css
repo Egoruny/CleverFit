@@ -55,7 +55,7 @@
 }
 
 :global .ant-card-head-title {
-   white-space:wrap;
+   white-space: pre-wrap;
    word-wrap: break-word;
    overflow: unset;
    overflow-wrap: break-word;

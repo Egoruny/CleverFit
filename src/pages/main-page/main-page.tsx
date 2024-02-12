@@ -4,7 +4,7 @@ import 'antd/dist/antd.css';
 import style from './main-page.module.css';
 import { SettingOutlined } from '@ant-design/icons';
 import { PageHeader, Button, Typography } from 'antd';
-const { Title } = Typography;
+const { Title,Text } = Typography;
 
 import CastomTrigger from '@components/custom-trigger/custom-trigger';
 import Switcher from '@components/switcher/switcher';
@@ -42,12 +42,12 @@ export const MainPage: React.FC = () => {
     const screenWidth = window.innerWidth;
     return (
         <>
-        
+    
             <Layout className={style.container}>
                 <Sider
                 collapsedWidth={64}
                 width={screenWidth=== 360?106:208}
-                    trigger={<CastomTrigger />}
+                trigger={<CastomTrigger />}
                     collapsible
                     collapsed={collapsed}
                     theme={'light'}
