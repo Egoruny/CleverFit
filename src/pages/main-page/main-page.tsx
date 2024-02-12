@@ -155,7 +155,7 @@ size='middle'
                         title ={ <Link href="https://ant.design" target="_blank">Скачать на телефон</Link>}
                         description="Доступно в PRO-тарифе"
                         />
-                     <div className={style.btn_platform_container}>
+                    <div className={style.btn_platform_container}>
                         <Button
                         className={style.btn_platform}
                     type='text'
@@ -164,7 +164,7 @@ size='middle'
                         >Android OS</Button>
                         <Button
                         className={style.btn_platform}
-                         type='text'
+                        type='text'
                     icon={< AppleFilled/>}
                     size='small'
                         >Android OS</Button>

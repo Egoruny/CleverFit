@@ -55,6 +55,7 @@
 }
 
 :global .ant-card-head-title {
+   max-width: 180px;
    text-overflow: unset;
    white-space:wrap;
    word-wrap: break-word;
@@ -129,7 +130,7 @@
    }
    
    :global .ant-card-head-title {
-   max-width: 200px;
+
    }
 
    .ant-card {

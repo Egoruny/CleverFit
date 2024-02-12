@@ -5,7 +5,7 @@ import style from './style.module.css'
 const CastomTrigger = () => (
     <>
     <div className={style.container}>
-    <img src={exitIcon} alt="icon"/>
+    <img className={style.swither_icons} src={exitIcon} alt="icon"/>
 <Button type='text'>Выход</Button>
 </div>
     </>
