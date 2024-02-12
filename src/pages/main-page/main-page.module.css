@@ -88,10 +88,6 @@
    color:#2F54EB;
 }
 
-:global .ant-card-head {
-
-      }
-
 :global .ant-card-head-title {
    font-family:'Inter', sans-serif;
    max-width: 200px;
