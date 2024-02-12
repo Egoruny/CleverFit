@@ -1,0 +1,22 @@
+.container {
+    text-align: start;
+    padding-left: 24px;
+}
+
+
+.container img {
+    height: 16px;
+    width: 16px;
+    margin-bottom: 4px;
+}
+
+@media (max-width: 360px) {
+    .container img {
+        display: none;
+    }
+    .container {
+      padding-left: 0;
+      display: flex;
+      justify-content: center;
+    }
+}

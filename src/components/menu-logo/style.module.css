@@ -1,0 +1,24 @@
+.Logo {
+   display: flex;
+   justify-content: center;
+   margin-top: 30px;
+   margin-bottom: 50px;
+   }
+   
+   .Logo img {
+      max-width: 133px;
+      height: 100%;
+      object-fit: cover;
+   }
+
+@media(max-width:360px) {
+   .Logo {
+      margin-bottom: 32px;
+      margin-top: 17px;
+
+   }
+   .Logo img {
+      max-width: 72px;
+   
+   }
+}
