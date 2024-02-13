@@ -13,10 +13,13 @@ import MenuLogo from '@components/menu-logo/menu-logo';
 
 
 import {
+    getTwoToneColor,
+    setTwoToneColor ,
     HeartFilled,
     AndroidFilled ,
     AppleFilled,
     CalendarTwoTone,
+    CalendarOutlined,
     IdcardOutlined,
 } from '@ant-design/icons';
 
@@ -102,7 +105,7 @@ export const MainPage: React.FC = () => {
         <Card
         className={style.card_app_description}
         >
-        <Title level={4}>CleverFit — это не просто приложение, а твой личный помощник в мире фитнеса. Не откладывай на завтра — начни тренироваться уже сегодня!</Title> 
+        <Title className={style.card_app_description_title} level={4}>CleverFit — это не просто приложение, а твой личный помощник в мире фитнеса. Не откладывай на завтра — начни тренироваться уже сегодня!</Title> 
         </Card>
 
 <div className={style.card_wrapper}>
@@ -125,7 +128,7 @@ size='middle'
     <Card title="Назначить календарь" bordered={false} className={style.car_begin} bodyStyle={{padding:'12px 24px 12px 24px',display:'flex',justifyContent:'center'}}>
     <Button
     className={style.card_button}
-icon={< CalendarTwoTone twoToneColor="#061178"/>}
+icon={<CalendarTwoTone twoToneColor={['#2F54EB','#2F54EB']}/>}
 size='middle'
 >
     <span className={style.button_text}>Календарь</span>
@@ -153,7 +156,7 @@ size='middle'
                     <Card bodyStyle={{padding:0}} className={style.footer_card}>
                         <Meta
                         className={style.meta}
-                        title ={ <Link href="https://ant.design" target="_blank">Скачать на телефон</Link>}
+                        title ={<Link style={{ color: '#2F54EB' }}  href="https://ant.design" target="_blank">Скачать на телефон</Link>}
                         description="Доступно в PRO-тарифе"
                         />
                     <div className={style.btn_platform_container}>

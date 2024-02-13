@@ -11,12 +11,12 @@ const iconsColor:React.CSSProperties = {
     color: '#061178',
     paddingLeft: '0px'
 }
-// style:{paddingLeft:0,marginLeft:0,textAlign:'left'}
+
 const itemsMenu = [
     {
     className:style.icon,
     key: '1',
-    icon: <CalendarTwoTone  twoToneColor="#061178" />,
+    icon: <CalendarTwoTone twoToneColor={['#061178','#061178']} />,
     label: 'Календарь',
     },
     {

@@ -29,6 +29,7 @@ blockquote,
 dl,
 dd {
   margin: 0px;
+  margin-bottom: 0px;
 }
 
 button {
@@ -36,7 +37,6 @@ button {
   font-weight: 400;
 
 }
-
 
 @media (max-width: 834px) {
 h1.ant-typography {

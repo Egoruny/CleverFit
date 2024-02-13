@@ -26,6 +26,7 @@
    font-family:'Inter';
    line-height: 20px;
    color:#061178;
+   box-shadow: 0 2px 0 0 rgba(0, 0, 0, 0.04);
    }
 
 .card_app_description {
@@ -33,12 +34,32 @@
    font-family:'Inter';
    font-weight: 500;
    margin-right: 24px;
-   max-width:752px;
    font-size: 20px;
    line-height: 26px;
    margin-left: 26px;
    margin-top: 16px;
+box-shadow: 0 2px 0 0 rgba(0, 0, 0, 0.04);
 }
+
+.card_app_description_title {
+   white-space: pre-wrap;
+   word-wrap: break-word;
+   overflow-wrap: break-word;
+   margin-bottom: 0px;
+}
+
+.card_app_description_title p {
+   margin-bottom: 0px;
+}
+
+
+:global h4.ant-typography {
+   margin-bottom: 0;
+   font-size: 20px;
+   line-height: 26px;
+   color:#262626;
+}
+
 
 .card_wrapper {
    max-width:752px;
@@ -60,7 +81,6 @@
    overflow: unset;
    overflow-wrap: break-word;
 }
-
 
 
 .header {
@@ -100,6 +120,7 @@
    font-family:'Inter', sans-serif;
    line-height: 20px;
 }
+
 
 .btn_platform_container {
    display: flex;
@@ -143,6 +164,7 @@
       flex-direction: column-reverse;
      align-items: center;
      gap: 24px;
+     padding:0px 16px 0px 16px
    }
 
    .footer_card {
@@ -160,7 +182,23 @@
       max-width: 100%;
       text-align: center;
    }
-   
+
+   :global  .ant-card-body {
+padding: 16px;
+   }
+
+   .card_app_description {
+      margin: 16px;
+   }
+
+   .card_opportunities {
+      margin: 16px;
+   }
+
+   .card_wrapper {
+      margin: 16px;
+   }
+
    .set_button svg {
       display: block;
    }
@@ -194,7 +232,7 @@
    height: 100%;
    z-index: 2;
 }
-}
 
+}
 
 
