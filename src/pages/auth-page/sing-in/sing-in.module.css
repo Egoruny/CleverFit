@@ -30,6 +30,12 @@
     background-color: #2F54EB;
 }
 
+@media (max-width:1200px){
+    .form_btn_container {
+        margin-bottom: 0;
+    }
+}
+
 @media(max-width:360px) {
     .form_btn_container { 
         margin-bottom: 90px;

@@ -107,7 +107,7 @@ useEffect(() => {
     <Form.Item 
     name="remember" 
     valuePropName="checked"
-     noStyle>
+    noStyle>
     <Checkbox data-test-id='login-remember' className={style.form_checkbox} checked={false} onChange={rememberUser}>Запомнить меня</Checkbox>
     </Form.Item>
     
