@@ -18,9 +18,9 @@ const dispatch = useAppDispatch()
 
 
 
-const ClickFunctionBtn =() => {
-    dispatch(push('/auth/registration',location))
-}
+const ClickFunctionBtn =() => dispatch(push('/auth/registration',location))
+    
+
 
 return ( 
 <Layout className={style.error_login_wrpper}>

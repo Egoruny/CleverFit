@@ -5,16 +5,16 @@ import { useAppDispatch,useAppSelector} from '../../../redux/configure-store';
 import {AuthDataType,ValidateStatus} from '../../../utils/constans/type'
 import  {useState,useEffect} from 'react';
 import { postLoginStart,postFogorPsswordStart ,setLogin} from '@redux/auth-slise/auth-slise';
+import { emailSelect } from '@redux/auth-slise/select';
+import { passwordRegExp,emailRegExp } from '@utils/constans/regExp';
 import style from './sing-in.module.css'
 
 
 const SingIn = () => {
 const [form] = Form.useForm()
-const email = useAppSelector(state => state.app.user.login)
+const email = useAppSelector(emailSelect)
 const location = useLocation()
 const [emailStatus,setEmailStatus] = useState<ValidateStatus>('')
-const emailRegExp = /^([a-zA-Z0-9._]+@[a-zA-Z0-9.]+\.[a-zA-Z]{2,6})+$/;
-const passwordRegExp = /^(?=.*[A-Z])(?=.*\d)[A-Za-z\d]{8,}$/
 const dispatch = useAppDispatch();
 const [isRemember,setUserInLocalStorage] = useState(true)
 const [disabledForgorPass,setdisabledForgorPass] = useState(true)
@@ -45,10 +45,10 @@ const onSubmit = ({password, email}:AuthDataType) => {
 }
 
 const  onFogotPassword = () => {
-  const em = form.getFieldValue('email')
-  if(em ) {
+  const emailValue = form.getFieldValue('email')
+  if(emailValue ) {
     dispatch(setLogin(form.getFieldValue('email')));
-    dispatch(postFogorPsswordStart({ email:em,location}));
+    dispatch(postFogorPsswordStart({ email:emailValue,location}));
   } else{
     setEmailStatus('error');
   }

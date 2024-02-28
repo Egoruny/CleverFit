@@ -13,9 +13,9 @@ const location = useLocation()
 
 
 
-const ClickFunctionBtn =() => {
-    dispatch(replace('/auth/change-password',location))
-}
+const ClickFunctionBtn =() => dispatch(replace('/auth/change-password',location))
+  
+
 
 return <Layout className={style.error_login_wrpper}>
 <Result

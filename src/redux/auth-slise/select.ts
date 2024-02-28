@@ -1,7 +1,5 @@
 import { RootState } from "@redux/configure-store";
 
-
-
-
-export const singInSelect = (state:RootState) => state.app.status;
-export const isLoggedInSelect = (state:RootState) => state.app.isLogged;
+export const emailSelect = (state:RootState) =>  state.app.user.login;
+export const passwordSelect = (state:RootState) => state.app.user.password;
+export const confirmPasswordSelect = (state:RootState)=> state.app.user.confirmPassword

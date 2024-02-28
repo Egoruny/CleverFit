@@ -8,14 +8,15 @@ import style from './result-error-check-email-exist.module.css'
 
 const { Title } = Typography;
 const ResultErrorCheckEmailExist = () => {
+
+
 const dispatch = useAppDispatch()
 
 
+const ClickFunctionBtn =() => dispatch(push('/auth'))
+    
 
 
-const ClickFunctionBtn =() => {
-    dispatch(push('/auth'))
-}
 
 return ( 
 <Layout className={style.error_login_wrpper}>

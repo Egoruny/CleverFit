@@ -31,11 +31,3 @@ export default Loader
 
 
 
-// import Lottie from 'lottie-react';
-// import loaderJson from '@assets/loader.json';
-
-// const Loader = () => (
-//     <Lottie animationData={loaderJson} loop={true} style={{ height: 150, width: 150 }} />
-// );
-
-// export default Loader;

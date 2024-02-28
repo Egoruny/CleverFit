@@ -14,9 +14,9 @@ const location = useLocation()
 
 
 
-const ClickFunctionBtn =() => {
-    dispatch(push('/auth',location))
-}
+const ClickFunctionBtn =() => dispatch(push('/auth',location))
+   
+
 
 return ( 
 <Layout className={style.error_login_wrpper}>

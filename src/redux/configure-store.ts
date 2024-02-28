@@ -22,7 +22,6 @@ export const store = configureStore({
     reducer:combineReducers({
         app:AuthReducer,
         router: routerReducer,
-        // [userApi.reducerPath]: userApi.reducer,
     }),
     middleware: (getDefaultMiddleware) => getDefaultMiddleware().concat(sagaMiddleware).concat(routerMiddleware)
 

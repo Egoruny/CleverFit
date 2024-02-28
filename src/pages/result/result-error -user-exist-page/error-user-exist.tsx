@@ -10,11 +10,11 @@ const { Title } = Typography;
 
 const ErrorUserExsist = () => {
 
+
+
 const navigate = useNavigate()
 
-const ClickFunctionBtn =() => {
-navigate('/auth/registration')
-}
+const ClickFunctionBtn =() => navigate('/auth/registration')
 
 return ( 
     <Layout className={style.error_login_wrpper}>

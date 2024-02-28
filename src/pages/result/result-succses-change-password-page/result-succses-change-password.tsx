@@ -11,9 +11,9 @@ const ResultSuccsesChangePassword = () => {
 
 const dispatch = useAppDispatch()
 
-const ClickFunctionBtn =() => {
-    dispatch(replace('/auth'))
-}
+const ClickFunctionBtn =() => dispatch(replace('/auth'))
+    
+
 
 return <Layout className={style.error_login_wrpper}>
 <Result

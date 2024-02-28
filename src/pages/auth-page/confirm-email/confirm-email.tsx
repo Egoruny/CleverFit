@@ -29,7 +29,7 @@ const onComplete = (code:any) => {
 setValue('')
 }
 
-console.log(value)
+
 
 
 return ( 

@@ -5,7 +5,8 @@ import {AuthDataType,ValidateStatus} from '../../../utils/constans/type'
 import { useLocation } from 'react-router-dom';
 import  {useEffect,useState} from 'react';
 import Load from '../../../components/loader/loader'
-
+import { passwordRegExp } from '@utils/constans/regExp';
+import { confirmPasswordSelect,passwordSelect } from '@redux/auth-slise/select';
 const { Title } = Typography;
 
 
@@ -19,13 +20,12 @@ import style  from './change-password.module.css'
 const ChangePasword = () => {
 
 
-const password = useAppSelector(state => state.app.user.password)
-const confirmPassword = useAppSelector(state => state.app.user.confirmPassword)
+const password = useAppSelector(passwordSelect)
+const confirmPassword = useAppSelector(confirmPasswordSelect)
 const [form] = Form.useForm()
 const [formStatus,setFormStatus] = useState(false)
 const [passStatus,setPassStatus] = useState<ValidateStatus>('success')
 const [ConfirmpassStatus,setConfirmPassStatus] = useState<ValidateStatus>('success')
-const passwordRegExp = /^(?=.*[A-Z])(?=.*\d)[A-Za-z\d]{8,}$/
 const dispatch = useAppDispatch()
 const location = useLocation()
 const from = !!location.state?.pathname
@@ -34,11 +34,8 @@ const from = !!location.state?.pathname
 
 const validatePassword = (event: React.ChangeEvent<HTMLInputElement>) => {
   const passwordValue = event.target.value
-  if(passwordRegExp.test(passwordValue)) {
-    setPassStatus('') 
-  } else {
-    setPassStatus('error') 
-  }
+  const passwordStatus = passwordRegExp.test(passwordValue)?'':'error'
+  setPassStatus(passwordStatus) 
   }
 
   useEffect(() => {

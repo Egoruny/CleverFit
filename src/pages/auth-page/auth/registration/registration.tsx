@@ -5,6 +5,8 @@ import { postRegistratonStart,setLogin,setPassword } from '@redux/auth-slise/aut
 import { useLocation } from 'react-router-dom';
 import { useEffect,useState } from 'react';
 import {AuthDataType,ValidateStatus} from '../../../../utils/constans/type'
+import { emailSelect,passwordSelect } from '@redux/auth-slise/select';
+import { passwordRegExp,emailRegExp } from '@utils/constans/regExp';
 import style from './registration.module.css'
 
 
@@ -17,43 +19,32 @@ const [emailStatus,setEmailStatus] = useState<ValidateStatus>('success')
 const [passStatus,setPassStatus] = useState<ValidateStatus>('success')
 const [ConfirmpassStatus,setConfirmPassStatus] = useState<ValidateStatus>('success')
 const [formStatus,setFormStatus] = useState(false)
-const email = useAppSelector(state => state.app.user.login)
-const password = useAppSelector(state => state.app.user.password)
+const email = useAppSelector(emailSelect)
+const password = useAppSelector(passwordSelect)
 const from = !!location.state?.pathname
-const passwordRegExp = /^(?=.*[A-Z])(?=.*\d)[A-Za-z\d]{8,}$/
-const emailRegExp = /^([a-zA-Z0-9._]+@[a-zA-Z0-9.]+\.[a-zA-Z]{2,6})+$/
 const comparePassworValue = form.getFieldValue('password')
 const confirmComparePassworValue = form.getFieldValue('confirmPassword')
 
 
 const validateEmail = (event: React.ChangeEvent<HTMLInputElement>) => {
   const emailValue = event.target.value
-  if(emailRegExp.test(emailValue)) {
-    setEmailStatus('')
-  } else {
-    setEmailStatus('error')
-  }
+  const emailStatus = emailRegExp.test(emailValue)?'':'error'
+    setEmailStatus(emailStatus)
   }
 
 
 
 const validatePassword = (event: React.ChangeEvent<HTMLInputElement>) => {
 const passwordValue = event.target.value
-if(passwordRegExp.test(passwordValue)) {
-  setPassStatus('') 
-} else {
-  setPassStatus('error')
-}
+const passStatus = passwordRegExp.test(passwordValue)?'':'error'
+setPassStatus(passStatus)
 }
 
 
 const validatePasswordConfirm = (event: React.ChangeEvent<HTMLInputElement>) => {
   const passwordValueConfirm = event.target.value
-  if (comparePassworValue === passwordValueConfirm) {
-    setConfirmPassStatus('')
-  } else {
-    setConfirmPassStatus('error')
-  }
+  const comparePassworStatus = comparePassworValue === passwordValueConfirm?'':'error'
+  setConfirmPassStatus(comparePassworStatus)
 }
 
 

@@ -1,4 +1,6 @@
-import axios from "axios"
+import { instance } from '../../axios/axsios';
+import { AxiosPaths } from "../../axios/axiosPaths";
+import {Path} from '../../utils/constans/url'
 import { call,put, takeLatest } from "redux-saga/effects"
 import {postLoginStart,
     postLoginSaccses,
@@ -22,11 +24,11 @@ import { push } from "redux-first-history"
 function* loginWorker ({payload : {password,email,isRemember,location}}) {
 
 try {
-const {data} = yield call(axios.post,`https://marathon-api.clevertec.ru/auth/login`,{email,password})
+const {data} = yield call(instance.post,AxiosPaths.LOG_IN,{email,password})
 
 
 
-yield put(push('/main',location))
+yield put(push(Path.Main,location))
 
 sessionStorage.setItem('jwt',data.accessToken)
 
@@ -40,7 +42,7 @@ yield put(postLoginSaccses())
 }catch (err){
 
 yield put(postLoginError())
-yield put(push('/result/error-login',location))
+yield put(push(Path.ErrorLogin,location))
 
  }
 }
@@ -49,61 +51,59 @@ yield put(push('/result/error-login',location))
 function* registrationWorker({payload : {password,email,location}}) {
 try {
 
-const {data} = yield call(axios.post,`https://marathon-api.clevertec.ru/auth/registration`,{email,password})
+const {data} = yield call(instance.post,AxiosPaths.REGISTRATION,{email,password})
 
-console.log(data)
+
 
 yield put(postRegistratonSaccses())
 
-yield put(push('/result/success',location))
+yield put(push(Path.RegistrationSucsses,location))
 
 }catch (err){
 
 yield put(postRegistratonError(err.response.status))
 
-console.log(err)
+
 if(err.response.status === 409) {
-    yield put(push('/result/error-user-exist',location))
+    yield put(push(Path.ErrorUserExsist,location))
 } else {
-    yield put(push('/result/error',location))
+    yield put(push(Path.ResulError,location))
 }
 }
 }
 
 function* fogotPassworWorker({payload : {email,location}}) {
-    console.log(email)
+ 
     try {
-        const {data} = yield call(axios.post,`https://marathon-api.clevertec.ru/auth/check-email`,{email})
+        const {data} = yield call(instance.post,AxiosPaths.CHECK_EMAIL,{email})
         
-        console.log(data)
+
         
         yield put(postFogorPsswordSaccses())
         
-        yield put(push('/auth/confirm-email',location))
+        yield put(push(Path.ConfirmEmail,location))
         
         }catch (err){
-            console.log(location)
+            
         yield put(postFogorPsswordError(err.response.status))
 
-        console.log(err.response.status)
-
-        console.log(err.response.data.message)
+      
 
         if(err.response.status === 404 && err.response.data.message === 'Email не найден'){
-            yield put(push('/result/error-check-email-no-exist',location))
+            yield put(push(Path.CheckEmailNoExsist,location))
         } else if(err.response.data.message !== 'Email не найден'){
-            yield put(push('/result/error-check-email',location))
+            yield put(push(Path.CheckEmail,location))
         }
 }
 }
 
 function* confirmEmailWorker ({payload: {code,email}}) {
    try {
-    const {data} = yield call(axios.post,`https://marathon-api.clevertec.ru/auth/confirm-email`,{email,code},{ withCredentials: true})
-console.log(data)
+    const {data} = yield call(instance.post,AxiosPaths.CONFIRM_EMAIL,{email,code},{ withCredentials: true})
+
     yield put(postConfirmEmailSaccses())
         
-    yield put(push('/auth/change-password'))
+    yield put(push(Path.ChangePasword))
 
    } catch (error) {
 
@@ -114,17 +114,17 @@ yield put(postConfirmEmailError(true))
 
 function* changePasswordWorker({payload: {password,confirmPassword,location}}) {
 try {
-    const {data} = yield call(axios.post,`https://marathon-api.clevertec.ru/auth/change-password`,{password,confirmPassword},{ withCredentials: true})
-console.log(data)
+    const {data} = yield call(instance.post,AxiosPaths.CHANGE_PASSWORD,{password,confirmPassword},{ withCredentials: true})
+
     yield put(postChengePasswordSaccses())
 
-    yield put(push('/result/success-change-password',location))
+    yield put(push(Path.SuccsesChangePasword,location))
 
 } catch (error) {
-    console.log(error)
+  
 yield put(postChengePasswordError(true))
 
-yield put(push('/result/error-change-password',location))
+yield put(push(Path.ErrorChangePassword,location))
 }
 }
 
