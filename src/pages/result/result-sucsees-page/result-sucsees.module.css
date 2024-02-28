@@ -1,0 +1,15 @@
+.error_login_wrpper {
+    max-width: 539px;
+}
+
+.form_register_login_button {
+    background-color: #2F54EB;
+}
+
+
+@media (max-width:360px) {
+    .error_login_wrpper {
+        margin-left: 16px;
+        margin-right: 16px;
+    }
+}
