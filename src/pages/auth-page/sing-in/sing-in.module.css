@@ -40,5 +40,8 @@
     .form_btn_container { 
         margin-bottom: 90px;
     }
+    .google_button > span > svg {
+        display: none;
+    }
    
 }

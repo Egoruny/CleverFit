@@ -129,7 +129,7 @@ useEffect(() => {
     </Button>
   </Form.Item>
   <Form.Item noStyle >
-    <Button icon={<GooglePlusOutlined />} size='large' htmlType="submit"  block >
+    <Button icon={<GooglePlusOutlined />} className={style.google_button} size='large' htmlType="submit"  block >
       Войти через Google
     </Button>
   </Form.Item>

@@ -32,7 +32,6 @@ const onChange = (activeKey:string) => {
 return (
 <>
 <div className={style.modal_wrapper}>
-<Loader/>
 <div className={style.modal_wrapper_blur}>
 <div className={style.modal_wrapper_blur_container}>
 <MenuLogo className/>
