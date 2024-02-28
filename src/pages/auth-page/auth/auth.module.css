@@ -37,6 +37,12 @@ gap: 48px;
 }
 
 
+@media (max-width:1000px) {
+    .modal_wrapper_blur_container {
+       max-height: 650px;
+    }
+}
+
 @media (max-width:360px) {
     .modal_wrapper_blur_container {
         margin-left: 16px;

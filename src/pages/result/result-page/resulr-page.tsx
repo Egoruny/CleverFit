@@ -11,12 +11,12 @@ const from = !!location.state?.pathname
 if(!from) {
 return <Navigate to='/'/>
 }
-console.log(from)
+
 
     return (
     <div className={style.result_wrapper}>
+        <Load/>
         <div className={style.result_wrapper_blur}>
-            <Load/>
             <Outlet/>
         </div>
     </div>)

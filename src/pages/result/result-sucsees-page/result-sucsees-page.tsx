@@ -13,10 +13,6 @@ const ResultSucssePage = () => {
 
 
 const dispatch = useAppDispatch()
-const location = useLocation()
-
-
-
 
 const ClickFunctionBtn =() => {
     dispatch(replace('/auth'))

@@ -1,7 +1,7 @@
 import { Button, Result,Layout,Typography  } from 'antd'
 import { useLocation,useNavigate} from 'react-router-dom';
 import { push } from 'redux-first-history';
-import { useAppDispatch,useAppSelector } from '../../../redux/configure-store';
+import { useAppDispatch} from '../../../redux/configure-store';
 
 
 import style from './result-error-check-email-exist.module.css'

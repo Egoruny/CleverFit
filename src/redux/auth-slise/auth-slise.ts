@@ -32,7 +32,7 @@ state.isLogged =true
 state.error = false
     },
     postLoginSaccses (state) {
-        state.isLogged = false
+        state.isLogged = true
     },
     postLoginError(state) {
         state.error = true

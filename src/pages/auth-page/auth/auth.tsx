@@ -5,9 +5,7 @@ import {Path} from '../../../utils/constans/url'
 import MenuLogo from '@components/menu-logo/menu-logo';
 import SingIn from '../sing-in/sing-in';
 import Registration from './registration/registration';
-import Load from '../../../components/loader/loader'
-import {useAppDispatch} from '../../../redux/configure-store';
-
+import Loader from '@components/loader/loader';
 
 type AuthTab = (typeof AuthTab)[keyof typeof AuthTab];
 
@@ -34,6 +32,7 @@ const onChange = (activeKey:string) => {
 return (
 <>
 <div className={style.modal_wrapper}>
+<Loader/>
 <div className={style.modal_wrapper_blur}>
 <div className={style.modal_wrapper_blur_container}>
 <MenuLogo className/>

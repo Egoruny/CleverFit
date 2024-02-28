@@ -1,6 +1,7 @@
 import { Navigate, Route, Routes,useNavigate } from 'react-router-dom';
-import { useEffect,lazy} from 'react';
+import { useEffect} from 'react';
 import {Path} from '../utils/constans/url'
+import Load from '../components/loader/loader'
 
 
 
@@ -36,6 +37,7 @@ useEffect(() => {
 
 return (
     <>
+    <Load/>
 <Routes>
         <Route path={Path.Root} element={<LayOut />} >
         <Route index={true} element={<Navigate to={Path.Login} />} />

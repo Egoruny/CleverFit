@@ -1,4 +1,5 @@
 import { Layout } from 'antd';
+import Loader from '@components/loader/loader';
 import 'antd/dist/antd.css';
 
 import style from './main-page.module.css';
@@ -22,6 +23,7 @@ const { Content } = Layout;
     return (
 <>
 <Layout className={style.container}>
+    <Loader/>
         <Sidebar/>
         <Layout className={style.wrapper}>
             <Header/>

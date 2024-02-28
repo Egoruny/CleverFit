@@ -24,9 +24,9 @@ function* loginWorker ({payload : {password,email,isRemember,location}}) {
 try {
 const {data} = yield call(axios.post,`https://marathon-api.clevertec.ru/auth/login`,{email,password})
 
-console.log(data)
 
 
+yield put(push('/main',location))
 
 sessionStorage.setItem('jwt',data.accessToken)
 
@@ -35,21 +35,11 @@ if (isRemember) {
 }
 
 
-yield put(push('/main',location))
-
-
-yield setTimeout(() => {
- put(postLoginSaccses())
-},1000)
-
-
-
+yield put(postLoginSaccses())
 
 }catch (err){
 
 yield put(postLoginError())
-
-
 yield put(push('/result/error-login',location))
 
  }

@@ -4,7 +4,7 @@ import { FC } from 'react';
 import Load from '../../assets/loader/loader.json'
 import LottieLoader from  'react-lottie-loader'
 
-import styles from './index.module.css';
+
 
 export const Loader: FC = () => {
 const isLoad = useAppSelector(state => state.app.isLogged)

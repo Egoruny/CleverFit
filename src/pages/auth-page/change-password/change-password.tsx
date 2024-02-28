@@ -120,7 +120,6 @@ const validatePassword = (event: React.ChangeEvent<HTMLInputElement>) => {
           size='large'
           block
           className={style.button_save_password}
-          // disabled={!formStatus ? true : false}
         >
           Сохранить
         </Button>

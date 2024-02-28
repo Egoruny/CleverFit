@@ -1,6 +1,5 @@
 import { Button, Result,Layout,Typography  } from 'antd'
-import { useEffect } from 'react';
-import {useLocation ,useNavigate,Navigate} from 'react-router-dom'
+import {useLocation } from 'react-router-dom'
 import { replace } from 'redux-first-history';
 import { useAppDispatch } from '../../../redux/configure-store';
 
