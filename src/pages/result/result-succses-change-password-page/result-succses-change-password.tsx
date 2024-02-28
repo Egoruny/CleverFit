@@ -10,10 +10,6 @@ const { Title } = Typography;
 const ResultSuccsesChangePassword = () => {
 
 const dispatch = useAppDispatch()
-const location = useLocation()
-const from = location.state?.from?.pathname
-console.log(from)
-
 
 const ClickFunctionBtn =() => {
     dispatch(replace('/auth'))

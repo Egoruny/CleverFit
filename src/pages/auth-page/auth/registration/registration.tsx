@@ -49,7 +49,6 @@ if(passwordRegExp.test(passwordValue)) {
 
 const validatePasswordConfirm = (event: React.ChangeEvent<HTMLInputElement>) => {
   const passwordValueConfirm = event.target.value
-  console.log(passwordValueConfirm)
   if (comparePassworValue === passwordValueConfirm) {
     setConfirmPassStatus('')
   } else {
@@ -129,7 +128,6 @@ const onFinishRegistration = ({password,email}:AuthDataType) => {
 
 
     <Form.Item
-
     validateTrigger='onChange'
     help ={ConfirmpassStatus === 'error'?<span className={style.form_register_extra}>Пароли не совпадают</span> : ''}
     validateStatus={ConfirmpassStatus}

@@ -1,6 +1,6 @@
 import { Button, Result,Layout,Typography  } from 'antd'
-import {useLocation ,useNavigate} from 'react-router-dom'
-import { useAppSelector} from '../../../redux/configure-store';
+import {useNavigate} from 'react-router-dom'
+
 
 
 
@@ -11,12 +11,6 @@ const { Title } = Typography;
 const ErrorUserExsist = () => {
 
 const navigate = useNavigate()
-const location = useLocation()
-const error = useAppSelector(state => state.app.error)
-const from = location.state?.from?.pathname
-console.log(from)
-console.log(error)
-
 
 const ClickFunctionBtn =() => {
 navigate('/auth/registration')

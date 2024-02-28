@@ -39,9 +39,9 @@ gap: 48px;
 }
 
 
-@media (max-width:1000px) {
+@media (max-width:1200px) {
     .modal_wrapper_blur_container {
-       max-height: 650px;
+       max-height: 640px;
     }
 }
 

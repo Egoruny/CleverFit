@@ -10,8 +10,7 @@ const { Title } = Typography;
 const ResultErrorChangePassword = () => {
 const dispatch = useAppDispatch()
 const location = useLocation()
-const from = location.state?.from?.pathname
-console.log(from)
+
 
 
 const ClickFunctionBtn =() => {

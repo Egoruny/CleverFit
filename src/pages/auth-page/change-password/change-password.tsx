@@ -17,6 +17,8 @@ import style  from './change-password.module.css'
 
 
 const ChangePasword = () => {
+
+
 const password = useAppSelector(state => state.app.user.password)
 const confirmPassword = useAppSelector(state => state.app.user.confirmPassword)
 const [form] = Form.useForm()
@@ -50,7 +52,6 @@ const validatePassword = (event: React.ChangeEvent<HTMLInputElement>) => {
   const validatePasswordConfirm = (event: React.ChangeEvent<HTMLInputElement>) => {
     const comparePassworValue = form.getFieldValue('password')
     const passwordValueConfirm = event.target.value
-    console.log(passwordValueConfirm)
     if (comparePassworValue === passwordValueConfirm) {
       setConfirmPassStatus('')
     } else {
