@@ -1,0 +1,21 @@
+.ant-card-head-title {
+    text-align: center;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    overflow: unset;
+    overflow-wrap: break-word;
+}
+
+@media (max-width: 834px) {
+    .ant-card-head-title {
+        text-align: unset;
+    }
+}
+
+
+@media (max-width: 360px) {
+.ant-card-head-title {
+    max-width: 100%;
+    text-align: center;
+}
+}

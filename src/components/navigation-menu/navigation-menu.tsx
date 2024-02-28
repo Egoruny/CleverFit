@@ -1,5 +1,6 @@
-import { Menu } from 'antd';
+import { Menu,Typography } from 'antd';
 import style from './style.module.css'
+const {  Link } = Typography;
 import {
     HeartFilled,
     TrophyFilled,
@@ -14,16 +15,15 @@ const iconsColor:React.CSSProperties = {
 
 const itemsMenu = [
     {
-    className:style.icon,
     key: '1',
-    icon: <CalendarTwoTone twoToneColor={['#061178','#061178']} />,
+    icon: <Link><CalendarTwoTone twoToneColor={['#061178','#061178']} /></Link>,
     label: 'Календарь',
     },
     {
 
     key: '2',
     icon: <HeartFilled style={iconsColor}/>,
-    label: 'Тренировки',
+    label: <Link>Тренировки</Link>,
     },
     {
     key: '3',
@@ -37,7 +37,7 @@ const itemsMenu = [
     },
 ]
 
-const NavigationMenu  = () => (
+const NavigationMenu: React.FC  = () => (
     <Menu
     className={style.adaptiv_menu}
     defaultSelectedKeys={['1']}

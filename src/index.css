@@ -1,4 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap');
+@import url('./components/cards-discriptions/card-discriptions.css');
+@import url('./components/cards-begin-taining/cards-begin-taining.css');
+@import url('./pages/auth-page/auth/auth.css');
+@import url('./pages/auth-page/sing-in/sing-in.css');
+@import url('./pages/result/result-error-login-page/resul-error-login.css');
 
 *,
 *::before,

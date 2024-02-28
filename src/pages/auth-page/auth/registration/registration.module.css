@@ -1,0 +1,41 @@
+
+.form_container {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+.form_register_extra{
+    position: absolute;
+    left: 0;
+    font-family: 'Inter';
+    font-weight: 400;
+    font-size: 12px;
+}
+
+.form_register_input_email {
+    margin-top: 16px;
+}
+
+.form_register_btn_container {
+    display:flex;
+    flex-direction:column;
+    gap:16px;
+    align-items:center;
+}
+
+
+
+.form_register_login_button {
+    background-color: #2F54EB;
+}
+
+@media (max-width:360px) {
+    .form_register_input_email {
+        margin-top: 8px;
+    }
+
+    .form_register_input_repeat_password{
+        margin-bottom: 52px;
+    }
+}

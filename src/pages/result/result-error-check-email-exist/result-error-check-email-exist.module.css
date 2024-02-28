@@ -1,0 +1,17 @@
+.error_login_wrpper {
+    max-width: 539px;
+}
+
+.form_register_login_button {
+    background-color: #2F54EB;
+}
+
+.check_email_exist {
+    padding: 64px 32px 56px 32px;
+}
+@media (max-width:360px) {
+    .error_login_wrpper {
+        margin-left: 16px;
+        margin-right: 16px;
+    }
+}

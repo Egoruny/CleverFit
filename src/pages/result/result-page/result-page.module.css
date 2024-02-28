@@ -1,0 +1,22 @@
+.result_wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 1440px;
+    min-height: 100vh;
+    margin: 0 auto;
+    background: url(../../../assets/img/Enter_page_light.png);
+    background-position: center;
+    font-family: 'Inter';
+
+}
+
+.result_wrapper_blur {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    min-height: 100vh;
+    background: rgba(121, 156, 212, 0.5);
+    backdrop-filter: blur(5px);
+}
