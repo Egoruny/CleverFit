@@ -1,15 +1,11 @@
-import { Outlet } from 'react-router-dom'
+import { Outlet } from 'react-router-dom';
 
+const LayOut = () => {
+    return (
+        <>
+            <Outlet />
+        </>
+    );
+};
 
-const LayOut =() => {
-
-    return <> 
-        <Outlet/>
-    
-    </>
-}
-
-
-export default LayOut
-
-
+export default LayOut;

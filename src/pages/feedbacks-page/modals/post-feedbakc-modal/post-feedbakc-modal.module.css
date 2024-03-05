@@ -1,0 +1,11 @@
+.btn_submit {
+    background: #2f54eb;
+    position: absolute;
+    right: 0;
+}
+
+@media (max-width: 360px) {
+    .btn_submit {
+        width: 100%;
+    }
+}

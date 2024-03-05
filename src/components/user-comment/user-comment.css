@@ -1,0 +1,33 @@
+.ant-comment {
+    border-radius: 2px;
+}
+
+.ant-comment-content-detail p {
+    white-space: initial;
+}
+
+.ant-comment-inner {
+    padding: 16px;
+}
+
+.ant-comment-avatar {
+   width: 96px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    font-family: 'Inter';
+    font-weight: 400;
+    line-height: 21px;
+}
+
+.ant-rate-star > .ant-rate-star-first > .anticon > span > svg {
+    border: 2px solid black;
+}
+
+
+@media(max-width:360px) {
+    .ant-comment-avatar {
+        max-width: 160px;
+        align-items: start;
+    }
+}

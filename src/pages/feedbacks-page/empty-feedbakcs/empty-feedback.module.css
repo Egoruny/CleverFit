@@ -1,0 +1,50 @@
+.container {
+    padding: 0px 24px 0px 24px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+.text {
+    display: block;
+    margin: 0 auto;
+    text-align: center;
+}
+.empty_card {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 56px;
+    padding-top: 56px;
+    gap: 48px;
+}
+
+.tytle {
+    color: #061178;
+}
+
+.btn_empty_feedbakc {
+    background: #2f54eb;
+    width: 140px;
+}
+
+@media (max-width: 360px) {
+    .container {
+        padding: 24px 16px 0px 16px;
+        justify-content: start;
+    }
+
+    .empty_card {
+        padding: 48px 32px 48px 32px;
+    }
+    .btn_empty_feedbakc {
+        width: 100%;
+    }
+    .text {
+        white-space: pre-wrap;
+    }
+}

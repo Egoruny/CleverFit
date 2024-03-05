@@ -1,7 +1,7 @@
-import React, { useState } from 'react'
-import style from './sidebar.module.css'
+import React, { useState } from 'react';
+import style from './sidebar.module.css';
 import { Layout } from 'antd';
-const { Sider } = Layout
+const { Sider } = Layout;
 
 import CastomTrigger from '@components/custom-trigger/custom-trigger';
 import Switcher from '@components/switcher/switcher';
@@ -9,13 +9,13 @@ import NavigationMenu from '@components/navigation-menu/navigation-menu';
 import MenuLogo from '@components/menu-logo/menu-logo';
 
 const Sidebar: React.FC = () => {
-    const [collapsed, setCollapsed] = useState(false);
+    const [collapsed, setCollapsed] = useState(true);
     const screenWidth = window.innerWidth;
     return (
         <Sider
-        collapsedWidth={64}
-        width={screenWidth=== 360?106:208}
-        trigger={<CastomTrigger />}
+            collapsedWidth={64}
+            width={screenWidth === 360 ? 106 : 208}
+            trigger={<CastomTrigger />}
             collapsible
             collapsed={collapsed}
             theme={'light'}
@@ -25,7 +25,7 @@ const Sidebar: React.FC = () => {
             <MenuLogo collapse={collapsed} />
             <NavigationMenu />
         </Sider>
-    )
-}
+    );
+};
 
-export default Sidebar
+export default Sidebar;

@@ -7,6 +7,7 @@ export type AuthDataType = {
 }
 
 export type AuthType = {
+    jwt:any
     isLogged: boolean
     error: any
     checkBox:boolean

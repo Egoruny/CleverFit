@@ -1,8 +1,8 @@
 .ant-form-item-control-input-content {
+    position: relative;
     display: flex;
     align-items: center;
     justify-content: space-between;
-
 }
 
 .ant-form-large .ant-form-item-control-input {
