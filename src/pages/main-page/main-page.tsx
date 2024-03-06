@@ -1,40 +1,38 @@
 import { Layout } from 'antd';
+import { Outlet } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
+import { useEffect } from 'react';
+import { jwtSelect } from '@redux/auth-slise/select';
+import { useAppSelector } from '@redux/configure-store';
 import Loader from '@components/loader/loader';
 import 'antd/dist/antd.css';
 
 import style from './main-page.module.css';
 
-
-
-
 import Sidebar from '@components/sidebar/sidebar';
-import Header from '@components/header/header';
-import CardsDiscriptions from '@components/cards-discriptions/cards-discriptions';
-import Cards from '@components/cards-begin-taining/cards-begin-taining';
-import FooterContent from '@components/footer-content/footer-content';
 
+const MainPage: React.FC = () => {
+    const navigate = useNavigate();
+    const jwt = localStorage.getItem('jwt');
 
-const { Content } = Layout;
+    const sessionStorageJwt = useAppSelector(jwtSelect);
 
-
-
- const MainPage: React.FC = () => {
+    useEffect(() => {
+        if (jwt === null && !sessionStorageJwt) {
+            navigate('/auth');
+        }
+    }, [jwt, navigate, sessionStorageJwt]);
 
     return (
-<>
-<Layout className={style.container}>
-    <Loader/>
-        <Sidebar/>
-        <Layout className={style.wrapper}>
-            <Header/>
-<Content>
-<CardsDiscriptions/>
-<Cards/>
-</Content>
-        <FooterContent/>
-        </Layout>
-    </Layout>
-</>
+        <>
+            <Layout className={style.container}>
+                <Loader />
+                <Sidebar />
+                <Layout className={style.wrapper}>
+                    <Outlet />
+                </Layout>
+            </Layout>
+        </>
     );
 };
-export default MainPage
+export default MainPage;

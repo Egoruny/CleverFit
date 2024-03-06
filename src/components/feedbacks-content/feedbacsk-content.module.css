@@ -1,0 +1,37 @@
+.feedbacks_content_wrapper {
+    min-height: 100vh;
+    position: relative;
+    margin: 24px 24px 0px 24px;
+}
+
+.feedbacks_content {
+    max-height: 650px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    overflow-y: auto;
+    scrollbar-width: none;
+}
+.footer_feedbaks {
+    margin-top: 110px;
+    margin-bottom: 48px;
+    background: none;
+    padding: 0;
+}
+
+.feedbacks_btn {
+    background: #2f54eb;
+}
+
+@media (max-width: 360px) {
+    .feedbacks_content_wrapper {
+        margin: 24px 16px 0px 16px;
+    }
+
+    .footer_feedbaks {
+        margin-bottom: 0;
+        display: flex;
+        flex-direction: column;
+        margin-top: 48px;
+    }
+}

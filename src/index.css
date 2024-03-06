@@ -4,6 +4,8 @@
 @import url('./pages/auth-page/auth/auth.css');
 @import url('./pages/auth-page/sing-in/sing-in.css');
 @import url('./pages/result/result-error-login-page/resul-error-login.css');
+@import url('./components//feedbacks-header/feedbacks-header.css');
+@import url('./components/user-comment/user-comment.css');
 
 *,
 *::before,
