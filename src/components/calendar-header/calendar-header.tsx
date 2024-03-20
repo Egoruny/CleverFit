@@ -17,11 +17,12 @@ const CalendarHeader = () => {
             </Breadcrumb>
             <div className={style.set_btn_container}>
                 <Button
+                    className={style.set_button}
                     icon={<SettingOutlined />}
                     size='middle'
                     type='text'
                 >
-                    Настройки
+                    <span className={style.button_text}>Настройки</span>
                 </Button>
             </div>
         </PageHeader>
