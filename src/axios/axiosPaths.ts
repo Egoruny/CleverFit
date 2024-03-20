@@ -5,5 +5,8 @@ export const AxiosPaths = {
     CONFIRM_EMAIL: '/auth/confirm-email',
     FORGOT_PASS: '/confirm-email',
     CHANGE_PASSWORD: '/auth/change-password',
-    FEEDBACK:'/feedback'
+    FEEDBACK:'/feedback',
+    TRANING:'/training',
+    TRANING_CATALOG:'/catalogs/training-list',
+    CREATE_TRANING:'/create-training'
 };

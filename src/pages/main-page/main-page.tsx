@@ -2,7 +2,7 @@ import { Layout } from 'antd';
 import { Outlet } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
 import { useEffect } from 'react';
-import { jwtSelect } from '@redux/auth-slise/select';
+import { jwtSelect } from '@redux/slise/select';
 import { useAppSelector } from '@redux/configure-store';
 import Loader from '@components/loader/loader';
 import 'antd/dist/antd.css';
@@ -17,11 +17,11 @@ const MainPage: React.FC = () => {
 
     const sessionStorageJwt = useAppSelector(jwtSelect);
 
-    useEffect(() => {
-        if (jwt === null && !sessionStorageJwt) {
-            navigate('/auth');
-        }
-    }, [jwt, navigate, sessionStorageJwt]);
+    // useEffect(() => {
+    //     if (jwt === null && !sessionStorageJwt) {
+    //         navigate('/auth');
+    //     }
+    // }, [jwt, navigate, sessionStorageJwt]);
 
     return (
         <>

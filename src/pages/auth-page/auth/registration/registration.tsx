@@ -1,11 +1,11 @@
 import { useAppDispatch, useAppSelector } from '../../../../redux/configure-store';
 import { Button, Form, Input } from 'antd';
 import { EyeInvisibleOutlined, EyeTwoTone, GooglePlusOutlined } from '@ant-design/icons';
-import { postRegistratonStart, setLogin, setPassword } from '@redux/auth-slise/auth-slise';
+import { postRegistratonStart, setLogin, setPassword } from '@redux/slise/auth-slise';
 import { useLocation } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import { AuthDataType, ValidateStatus } from '../../../../utils/constans/type';
-import { emailSelect, passwordSelect } from '@redux/auth-slise/select';
+import { emailSelect, passwordSelect } from '@redux/slise/select';
 import { passwordRegExp, emailRegExp } from '@utils/constans/regExp';
 import style from './registration.module.css';
 

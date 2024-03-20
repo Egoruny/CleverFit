@@ -3,9 +3,15 @@ import createSagaMiddleware from 'redux-saga';
 import { combineReducers, configureStore } from '@reduxjs/toolkit';
 import { createReduxHistoryContext } from 'redux-first-history';
 import { createBrowserHistory } from 'history';
-import AuthReducer from './auth-slise/auth-slise';
-import feedbacksSlise from './auth-slise/feedbacks-slise';
-import postFeedbacSlice from './auth-slise/post-feedbakc-slise';
+import AuthReducer from './slise/auth-slise';
+import feedbacksSlise from './slise/feedbacks-slise';
+import postFeedbacSlice from './slise/post-feedbakc-slise';
+import traningListSlise from './slise/traningList-slise';
+import traningCatalogsSlise from './slise/traning-catalogs-slise';
+import treningModalsSlice from './slise/trening-modals-slice';
+import createTraningSlice from './slise/create-traning-slice';
+import updateTreningSlice from './slise/update-trening-slice';
+import appSlise from './slise/app-slice';
 import { runSaga } from './index';
 
 const sagaMiddleware = createSagaMiddleware();
@@ -17,9 +23,15 @@ const { createReduxHistory, routerMiddleware, routerReducer } = createReduxHisto
 
 export const store = configureStore({
     reducer: combineReducers({
-        app: AuthReducer,
+        app:appSlise,
+        auth: AuthReducer,
         feedBack: feedbacksSlise,
         postFeedbakc: postFeedbacSlice,
+        traningList:traningListSlise,
+        traningCatalogs:traningCatalogsSlise,
+        treningModals:treningModalsSlice,
+        createTraning:createTraningSlice,
+        updateTrening:updateTreningSlice,
         router: routerReducer,
     }),
     middleware: (getDefaultMiddleware) =>

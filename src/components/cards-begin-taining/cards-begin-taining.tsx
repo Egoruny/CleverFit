@@ -1,7 +1,9 @@
 import { Button, Card, Col, Row } from 'antd';
+import { getTraningListStart } from '@redux/slise/traningList-slise';
 import style from './cards-begin-taining.module.css';
 
 import { HeartFilled, CalendarTwoTone, IdcardOutlined } from '@ant-design/icons';
+import { useAppDispatch } from '@redux/configure-store';
 
 const cardsBeginTraining = [
     {
@@ -45,65 +47,78 @@ const cardsBeginTraining = [
     },
 ];
 
-const Cards: React.FC = () => (
-    <div className={style.card_wrapper}>
-        <Row gutter={[8, 8]}>
-            <Col span={8} xs={24} md={8}>
-                <Card
-                    title='Расписать тренировки'
-                    bordered={false}
-                    className={style.car_begin}
-                    bodyStyle={{
-                        padding: '12px 24px 12px 24px',
-                        display: 'flex',
-                        justifyContent: 'center',
-                    }}
-                >
-                    <Button className={style.card_button} icon={<HeartFilled />} size='middle'>
-                        <span>Тренировки</span>
-                    </Button>
-                </Card>
-            </Col>
+const Cards: React.FC = () => {
+const dispatch = useAppDispatch()
 
-            <Col span={8} xs={24} md={8}>
-                <Card
-                    title='Назначить календарь'
-                    bordered={false}
-                    className={style.car_begin}
-                    bodyStyle={{
-                        padding: '12px 24px 12px 24px',
-                        display: 'flex',
-                        justifyContent: 'center',
-                    }}
-                >
-                    <Button
-                        className={style.card_button}
-                        icon={<CalendarTwoTone twoToneColor={['#2F54EB', '#2F54EB']} />}
-                        size='middle'
+const onHandleClick = () => dispatch(getTraningListStart())
+
+
+    return (
+        <div className={style.card_wrapper}>
+            <Row gutter={[8, 8]}>
+                <Col span={8} xs={24} md={8}>
+                    <Card
+                        title='Расписать тренировки'
+                        bordered={false}
+                        className={style.car_begin}
+                        bodyStyle={{
+                            padding: '12px 24px 12px 24px',
+                            display: 'flex',
+                            justifyContent: 'center',
+                        }}
                     >
-                        <span>Календарь</span>
-                    </Button>
-                </Card>
-            </Col>
+                        <Button className={style.card_button} icon={<HeartFilled />} size='middle'>
+                            <span>Тренировки</span>
+                        </Button>
+                    </Card>
+                </Col>
 
-            <Col span={8} xs={24} md={8}>
-                <Card
-                    title='Заполнить профиль'
-                    bordered={false}
-                    className={style.car_begin}
-                    bodyStyle={{
-                        padding: '12px 24px 12px 24px',
-                        display: 'flex',
-                        justifyContent: 'center',
-                    }}
-                >
-                    <Button className={style.card_button} icon={<IdcardOutlined />} size='middle'>
-                        <span>Профиль</span>
-                    </Button>
-                </Card>
-            </Col>
-        </Row>
-    </div>
-);
+                <Col span={8} xs={24} md={8}>
+                    <Card
+                        title='Назначить календарь'
+                        bordered={false}
+                        className={style.car_begin}
+                        bodyStyle={{
+                            padding: '12px 24px 12px 24px',
+                            display: 'flex',
+                            justifyContent: 'center',
+                        }}
+                    >
+                        <Button
+                            data-test-id='menu-button-calendar'
+                            className={style.card_button}
+                            icon={<CalendarTwoTone twoToneColor={['#2F54EB', '#2F54EB']} />}
+                            size='middle'
+                            onClick={onHandleClick}
+                        >
+                            <span>Календарь</span>
+                        </Button>
+                    </Card>
+                </Col>
+
+                <Col span={8} xs={24} md={8}>
+                    <Card
+                        title='Заполнить профиль'
+                        bordered={false}
+                        className={style.car_begin}
+                        bodyStyle={{
+                            padding: '12px 24px 12px 24px',
+                            display: 'flex',
+                            justifyContent: 'center',
+                        }}
+                    >
+                        <Button
+                            className={style.card_button}
+                            icon={<IdcardOutlined />}
+                            size='middle'
+                        >
+                            <span>Профиль</span>
+                        </Button>
+                    </Card>
+                </Col>
+            </Row>
+        </div>
+    );
+};
 
 export default Cards;

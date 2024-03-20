@@ -1,0 +1,33 @@
+.ant-drawer-content {
+    border-radius: 8px 0 0 0;
+}
+
+.ant-drawer-close {
+    margin: 2px 10px 0 0;
+}
+
+.ant-drawer-right > .ant-drawer-content-wrapper {
+    border-radius: 8px 0 0 0;
+}
+
+.ant-drawer-body {
+    padding: 0 32px 32px;
+}
+
+.ant-drawer-header {
+    border: none;
+    padding: 16px 32px;
+}
+
+@media (max-width: 480px) {
+    .ant-drawer-content {
+        margin-top: 80px;
+        border-radius: 24px;
+    }
+    .ant-drawer-body {
+        padding: 0 16px;
+    }
+    .ant-drawer-header {
+        padding: 24px 16px;
+    }
+}

@@ -1,0 +1,14 @@
+
+.error_result_modal {
+    padding: 30px 32px;
+}
+
+.error_modal_btn {
+    background: #2f54eb;
+}
+
+@media (max-width: 360px) {
+    .error_result_modal {
+        padding: 20px 18px;
+    }
+}

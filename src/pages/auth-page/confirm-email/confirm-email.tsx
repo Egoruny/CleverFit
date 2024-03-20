@@ -1,5 +1,5 @@
 import { Result, Layout, Typography } from 'antd';
-import { postConfirmEmailStart } from '@redux/auth-slise/auth-slise';
+import { postConfirmEmailStart } from '@redux/slise/auth-slise';
 import VerificationInput from 'react-verification-input';
 import { useState } from 'react';
 import { useAppDispatch, useAppSelector } from '../../../redux/configure-store';

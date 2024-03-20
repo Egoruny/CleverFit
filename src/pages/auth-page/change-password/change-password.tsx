@@ -1,16 +1,12 @@
 import { Button, Layout, Typography, Form, Input, Card } from 'antd';
-import {
-    postChengePasswordStart,
-    setPassword,
-    setConfirmPassword,
-} from '@redux/auth-slise/auth-slise';
+import { postChengePasswordStart, setPassword, setConfirmPassword } from '@redux/slise/auth-slise';
 import { useAppDispatch, useAppSelector } from '../../../redux/configure-store';
 import { AuthDataType, ValidateStatus } from '../../../utils/constans/type';
 import { useLocation } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import Load from '../../../components/loader/loader';
 import { passwordRegExp } from '@utils/constans/regExp';
-import { confirmPasswordSelect, passwordSelect } from '@redux/auth-slise/select';
+import { confirmPasswordSelect, passwordSelect } from '@redux/slise/select';
 const { Title } = Typography;
 
 import style from './change-password.module.css';

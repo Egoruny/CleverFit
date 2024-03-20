@@ -15,5 +15,22 @@ export type AuthType = {
 }
 
 
+export type Exercise = {
+    _id?: string;
+    name: string;
+    replays: number;
+    weight: number;
+    approaches: number;
+    isImplementation?: boolean;
+};
+
+export type Training = {
+    _id?: string;
+    name: string;
+    date: string;
+    exercises: Exercise[];
+    isImplementation?: boolean;
+};
+
 declare const ValidateStatuses: ["success", "warning", "error", "validating", ""];
 export type ValidateStatus = typeof ValidateStatuses[number];

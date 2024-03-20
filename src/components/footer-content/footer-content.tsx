@@ -1,7 +1,7 @@
 import { Layout, Card, Button, Typography } from 'antd';
 import { AndroidFilled, AppleFilled } from '@ant-design/icons';
 import { useAppDispatch } from '@redux/configure-store';
-import { getFeedbacksStart } from '@redux/auth-slise/feedbacks-slise';
+import { getFeedbacksStart } from '@redux/slise/feedbacks-slise';
 
 import style from './footer-content.module.css';
 

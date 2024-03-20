@@ -1,7 +1,7 @@
 import { Button, Modal, Result, Typography } from 'antd';
 import style from './result-modal.module.css';
 import { useAppDispatch } from '@redux/configure-store';
-import { postFeedbacksSaccses, postFeedbacksError } from '@redux/auth-slise/post-feedbakc-slise';
+import { postFeedbacksSaccses, postFeedbacksError } from '@redux/slise/post-feedbakc-slise';
 const { Title } = Typography;
 
 const ResultModal = ({ open, setOpen, status, setOpenFormModal }) => {
@@ -71,7 +71,7 @@ const ResultModal = ({ open, setOpen, status, setOpenFormModal }) => {
                             <Button style={{ width: '50%' }} size='large' onClick={handleCancel}>
                                 Закрыть
                             </Button>
-                        </div>
+                        </div>,
                     ]}
                 />
             )}

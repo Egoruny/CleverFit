@@ -1,7 +1,11 @@
-import { Menu, Typography } from 'antd';
+import { Menu } from 'antd';
 import style from './style.module.css';
-const { Link } = Typography;
+import { Link } from 'react-router-dom';
+import { Path } from '../../utils/constans/url';
+import { useAppDispatch } from '@redux/configure-store';
 import { HeartFilled, TrophyFilled, CalendarTwoTone, IdcardOutlined } from '@ant-design/icons';
+
+import { getTraningListStart } from '@redux/slise/traningList-slise';
 
 const iconsColor: React.CSSProperties = {
     color: '#061178',
@@ -11,17 +15,13 @@ const iconsColor: React.CSSProperties = {
 const itemsMenu = [
     {
         key: '1',
-        icon: (
-            <Link>
-                <CalendarTwoTone twoToneColor={['#061178', '#061178']} />
-            </Link>
-        ),
-        label: 'Календарь',
+        icon: <CalendarTwoTone twoToneColor={['#061178', '#061178']} />,
+        label: ' Календарь',
     },
     {
         key: '2',
         icon: <HeartFilled style={iconsColor} />,
-        label: <Link>Тренировки</Link>,
+        label: 'Тренировки',
     },
     {
         key: '3',
@@ -35,8 +35,21 @@ const itemsMenu = [
     },
 ];
 
-const NavigationMenu: React.FC = () => (
-    <Menu className={style.adaptiv_menu} defaultSelectedKeys={['1']} items={itemsMenu} />
-);
+const NavigationMenu: React.FC = () => {
+    const dispatch = useAppDispatch();
+
+    const handleClick = (e) => {
+        if (e.key === '1') dispatch(getTraningListStart());
+    };
+
+    return (
+        <Menu
+            className={style.adaptiv_menu}
+            onClick={handleClick}
+            defaultSelectedKeys={['1']}
+            items={itemsMenu}
+        />
+    );
+};
 
 export default NavigationMenu;

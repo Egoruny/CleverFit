@@ -1,10 +1,9 @@
 import animationData from '@constants/styles/loader.json';
 import { useAppSelector } from '@redux/configure-store';
-import { FC } from 'react';
 import Load from '../../assets/loader/loader.json';
 import LottieLoader from 'react-lottie-loader';
 
-export const Loader: FC = () => {
+export const Loader: React.FC = () => {
     const isLoad = useAppSelector((state) => state.app.isLogged);
     const loaderStyle = {
         top: 0,

@@ -3,7 +3,7 @@ import style from './feedbacks-footer.module.css';
 const { Footer } = Layout;
 const { Title } = Typography;
 
-const FeedbacksFooter = () => {
+const FeedbacksFooter: React.FC = () => {
     return (
         <Footer className={style.footer_feedbaks}>
             <Button type='primary' className={style.feedbacks_btn}>

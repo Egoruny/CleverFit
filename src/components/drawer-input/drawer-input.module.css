@@ -1,0 +1,47 @@
+.input_number_wrapper {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.approaches {
+    max-width: 120px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.weight_count_wrapper {
+    display: flex;
+    gap: 6px;
+}
+
+.weight,
+.count {
+    max-width: 90px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.title_input {
+    height: 24px;
+    background: #f0f0f0;
+    font-family: 'Inter';
+    color: #262626;
+    padding: 0 8px;
+    vertical-align: middle;
+}
+
+.title_input_count {
+    height: 24px;
+    background: #f0f0f0;
+    color: #262626;
+    vertical-align: middle;
+    padding: 0 8px 0 4px;
+}
+
+.seporator {
+    display: flex;
+    align-items: end;
+}
