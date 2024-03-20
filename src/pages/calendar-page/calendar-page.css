@@ -1,0 +1,33 @@
+.ant-picker-calendar-header,
+.ant-picker-calendar-full .ant-picker-panel {
+    background: #f0f5ff;
+}
+.ant-picker-calendar-header {
+    padding: 12px 0 0;
+}
+
+.ant-picker-cell-inner {
+    background: #fff;
+}
+
+.ant-picker-calendar-full .ant-picker-panel .ant-picker-calendar-date-content {
+    height: 100px;
+}
+
+.ant-picker-calendar-date-value {
+    position: relative;
+}
+
+@media (max-width: 830px) {
+    .ant-picker-calendar-header {
+        display: flex;
+        align-items: center;
+        padding: 12px 8px;
+        gap: 8px;
+        background: #fff;
+    }
+
+    .ant-picker-calendar-header .ant-picker-calendar-mode-switch {
+        margin-top: 0;
+    }
+}

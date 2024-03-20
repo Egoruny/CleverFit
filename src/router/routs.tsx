@@ -19,6 +19,7 @@ import ResultErrorChangePassword from '@pages/result/result-error-change-passwor
 import ResultSuccsesChangePassword from '@pages/result/result-succses-change-password-page/result-succses-change-password';
 import MainContent from '@components/main-content/main-content';
 import Feedbacks from '@pages/feedbacks-page/feedbacks';
+import CalendarPage from '@pages/calendar-page/calendar-page';
 export const App = () => {
     const [serchParams] = useSearchParams();
     const accessToken = serchParams.get('accessToken');
@@ -39,6 +40,7 @@ export const App = () => {
                     <Route path={Path.Register} element={<Auth tab='register' />} />
                     <Route element={<MainPage />}>
                         <Route path={Path.Main} element={<MainContent />} />
+                        <Route path={Path.Calendar} element={<CalendarPage />} />
                     </Route>
                     <Route element={<MainPage />}>
                         <Route path={Path.Feetbacks} element={<Feedbacks />} />

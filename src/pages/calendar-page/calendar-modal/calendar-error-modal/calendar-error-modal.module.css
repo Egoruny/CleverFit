@@ -1,0 +1,27 @@
+.cansel_btn {
+    border: none;
+}
+
+.modal_header {
+    display: flex;
+    gap: 16px;
+}
+
+
+
+.modal_header p {
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 20.8px;
+}
+
+.icon_btn_cansel svg {
+    color: #2f54eb;
+    height: 24px;
+    width: 24px;
+}
+
+
+.modal_footer_btn  {
+    background:#2F54EB;
+}

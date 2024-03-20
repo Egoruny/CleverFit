@@ -1,8 +1,8 @@
 import { useEffect, useState } from 'react';
 import { Button, Form, Input, Modal, Typography } from 'antd';
-import { postFeedbacksStart } from '@redux/auth-slise/post-feedbakc-slise';
+import { postFeedbacksStart } from '@redux/slise/post-feedbakc-slise';
 import { useAppDispatch, useAppSelector } from '@redux/configure-store';
-import { postfeedbacksError, postFeedbakcSuccess } from '../../../../redux/auth-slise/select';
+import { postfeedbacksError, postFeedbakcSuccess } from '../../../../redux/slise/select';
 import CastomRate from '@components/custom-rate/castom-rate';
 import style from './post-feedbakc-modal.module.css';
 import ResultModal from '../result-modals/result-modal';

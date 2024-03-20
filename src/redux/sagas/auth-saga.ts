@@ -19,7 +19,7 @@ import {
     postChengePasswordStart,
     postChengePasswordSaccses,
     postChengePasswordError,
-} from '../auth-slise/auth-slise';
+} from '../slise/auth-slise';
 import { push } from 'redux-first-history';
 
 function* loginWorker({ payload: { password, email, isRemember, location } }) {

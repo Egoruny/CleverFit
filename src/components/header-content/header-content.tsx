@@ -5,7 +5,7 @@ import style from './header-content.module.css';
 
 const { Title } = Typography;
 
-const HeaderContent = () => {
+const HeaderContent: React.FC = () => {
     return (
         <div style={{ display: 'flex', justifyContent: 'space-between' }}>
             <Title

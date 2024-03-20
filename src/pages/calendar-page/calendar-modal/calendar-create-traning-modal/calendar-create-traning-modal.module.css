@@ -1,0 +1,46 @@
+.create_traning {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    & > div {
+        padding: 0;
+    }
+}
+
+.modal_container {
+    flex-direction: column;
+    justify-content: space-between;
+    display: flex;
+    align-items: center;
+}
+.modal_header {
+    display: flex;
+    align-items: start;
+    justify-content: space-between;
+    width: 100%;
+    padding: 16px 12px 12px;
+}
+
+.modal_title {
+    text-align: start;
+}
+
+.modal_content {
+    display: flex;
+    width: 100%;
+    padding: 0 12px;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    padding: 32px 0 20px;
+}
+
+.create_btn_container {
+    padding: 0 12px;
+}
+
+.create_traning_btn {
+    background-color: #2f54eb;
+}

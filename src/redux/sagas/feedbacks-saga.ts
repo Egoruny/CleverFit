@@ -8,12 +8,12 @@ import {
     getFeedbacksStart,
     getFeedbacksSaccses,
     getFeedbacksError,
-} from '@redux/auth-slise/feedbacks-slise';
+} from '@redux/slise/feedbacks-slise';
 import {
     postFeedbacksStart,
     postFeedbacksSaccses,
     postFeedbacksError,
-} from '@redux/auth-slise/post-feedbakc-slise';
+} from '@redux/slise/post-feedbakc-slise';
 
 function* getFeedbacksWorker() {
     try {

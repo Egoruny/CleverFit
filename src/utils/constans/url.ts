@@ -17,4 +17,5 @@ export const Path = {
     ErrorChangePassword: '/result/error-change-password',
     SuccsesChangePasword: '/result/success-change-password',
     Feetbacks: '/feedbacks',
+    Calendar:'/main/calendar'
 } as const;

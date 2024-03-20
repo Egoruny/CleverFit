@@ -6,11 +6,14 @@
 @import url('./pages/result/result-error-login-page/resul-error-login.css');
 @import url('./components//feedbacks-header/feedbacks-header.css');
 @import url('./components/user-comment/user-comment.css');
+@import url('./components/empy-content/empty-conten.css');
+@import url('./pages/calendar-page/calendar-page.css');
+@import url('./components/drawer/drawer.css');
 
 *,
 *::before,
 *::after {
-  box-sizing: border-box;
+    box-sizing: border-box;
 }
 
 #root {
@@ -18,7 +21,7 @@
 }
 
 body {
-  min-height: 100vh;
+    min-height: 100vh;
 }
 
 body,
@@ -35,23 +38,27 @@ figcaption,
 blockquote,
 dl,
 dd {
-  margin: 0px;
-  margin-bottom: 0px;
+    margin: 0px;
+    margin-bottom: 0px;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
 }
 
 button {
-  font-family: 'Inter';
-  font-weight: 400;
-
+    font-family: 'Inter';
+    font-weight: 400;
 }
 
 @media (max-width: 834px) {
-h1.ant-typography {
-  font-size: 24px;
-}
+    h1.ant-typography {
+        font-size: 24px;
+    }
 }
 @media (max-width: 360px) {
-h1.ant-typography {
-  font-size: 20px;
-}
+    h1.ant-typography {
+        font-size: 20px;
+    }
 }

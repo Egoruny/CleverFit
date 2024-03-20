@@ -13,7 +13,7 @@ type FeedbackCommentProps = {
     createdAt: string;
 };
 
-const UserComment = ({ fullName, image, message, rating, createdAt }: FeedbackCommentProps) => {
+const UserComment: React.FC<FeedbackCommentProps>= ({ fullName, image, message, rating, createdAt } ) => {
     const [name, surname] = fullName?.split(' ') ?? [];
 
     return (

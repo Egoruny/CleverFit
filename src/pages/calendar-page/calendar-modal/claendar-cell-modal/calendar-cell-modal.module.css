@@ -1,0 +1,15 @@
+.modal_wrapper {
+    position: absolute;
+    width: 264px;
+    top: 0;
+    box-shadow: 0 2px 8px 0 #00000026;
+    z-index: 5;
+}
+
+@media (max-width: 830px) {
+    .modal_wrapper {
+        min-width: 312px;
+        left: 50%;
+        transform: translate(-50%, 0);
+    }
+}

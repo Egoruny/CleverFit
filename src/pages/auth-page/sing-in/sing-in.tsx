@@ -4,8 +4,8 @@ import { useLocation } from 'react-router-dom';
 import { useAppDispatch, useAppSelector } from '../../../redux/configure-store';
 import { AuthDataType, ValidateStatus } from '../../../utils/constans/type';
 import { useState, useEffect } from 'react';
-import { postLoginStart, postFogorPsswordStart, setLogin } from '@redux/auth-slise/auth-slise';
-import { emailSelect } from '@redux/auth-slise/select';
+import { postLoginStart, postFogorPsswordStart, setLogin } from '@redux/slise/auth-slise';
+import { emailSelect } from '@redux/slise/select';
 import { passwordRegExp, emailRegExp } from '@utils/constans/regExp';
 import style from './sing-in.module.css';
 
@@ -51,7 +51,6 @@ const SingIn = () => {
     useEffect(() => {
         if (from) dispatch(postFogorPsswordStart({ email, location }));
     }, [from, dispatch, location, email]);
-
 
     const handleGoogleAuth = () => {
         window.location.href = `https://marathon-api.clevertec.ru/auth/google`;
@@ -116,7 +115,6 @@ const SingIn = () => {
                         style={{ height: '24px' }}
                         onClick={onFogotPassword}
                     >
-                      
                         Забыли пароль?
                     </Button>
                 </Form.Item>
