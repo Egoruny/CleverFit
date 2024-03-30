@@ -36,7 +36,6 @@ function* getUserWorker() {
     }
 }
 function* putUserWorker({ payload: body }) {
-    console.log(body);
     const jwt: boolean | string = yield select(jwtSelect);
     const headers = {
         Authorization: `Bearer ${jwt}`,

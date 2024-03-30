@@ -21,7 +21,6 @@ const UserComment: React.FC<FeedbackCommentProps> = ({
     createdAt,
 }) => {
     const [name, surname] = fullName?.split(' ') ?? [];
-    console.log(image)
     return (
         <>
             <Comment
@@ -30,7 +29,8 @@ const UserComment: React.FC<FeedbackCommentProps> = ({
                     <>
                         <div className={style.avatar}>
                             <Avatar
-                                icon={image?<img src={image}/>:<UserOutlined />}
+                            src={image}
+                                 icon={<UserOutlined />}
                                 style={{ color: '#262626', backgroundColor: '#ffffff' }}
                                 size={42}
                             />

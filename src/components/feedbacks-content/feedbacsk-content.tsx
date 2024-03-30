@@ -21,7 +21,6 @@ const FeedbacksContent: React.FC = () => {
     const feedbakcs = sortFeedbakcsByDate(useAppSelector(usersFeedbacks));
     const feeedbackError = useAppSelector(feedbacksErrorSelect);
     const [openModal, setOpenModal] = useState(false);
-    console.log(feedbakcs[0]);
     const getAllFeedbacks = () => (isHiden ? feedbakcs : feedbakcs.slice(0, 4));
 
     const handleopenModal = () => setOpenModal(true);

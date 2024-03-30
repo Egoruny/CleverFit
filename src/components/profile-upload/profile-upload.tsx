@@ -29,7 +29,7 @@ const { Text } = Typography;
 
 const ProfileUpload = ({ imgSrc }: ProfileUploadProps) => {
     const token = useAppSelector(jwtSelect);
-    console.log(imgSrc)
+
 
     const initialFile = {
         uid: '-2',
