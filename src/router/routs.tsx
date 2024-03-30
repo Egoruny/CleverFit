@@ -1,6 +1,8 @@
-import { Navigate, Route, Routes, useNavigate, useSearchParams } from 'react-router-dom';
+import { Navigate, Route, Routes, useSearchParams } from 'react-router-dom';
 import { useEffect } from 'react';
 import { Path } from '../utils/constans/url';
+import { setJwt } from '@redux/slise/auth-slise';
+import { useAppDispatch } from '@redux/configure-store';
 import Load from '../components/loader/loader';
 
 import MainPage from '../pages/main-page/main-page';
@@ -20,15 +22,19 @@ import ResultSuccsesChangePassword from '@pages/result/result-succses-change-pas
 import MainContent from '@components/main-content/main-content';
 import Feedbacks from '@pages/feedbacks-page/feedbacks';
 import CalendarPage from '@pages/calendar-page/calendar-page';
+import ProfilePage from '@pages/profile-page/profile-page';
+import SettingsPage from '@pages/settings-page/settings-page';
 export const App = () => {
+    const dispatch = useAppDispatch()
     const [serchParams] = useSearchParams();
     const accessToken = serchParams.get('accessToken');
 
     useEffect(() => {
         if (accessToken) {
             localStorage.setItem('jwt', accessToken);
+            dispatch(setJwt(accessToken))
         }
-    }, [accessToken]);
+    }, [accessToken,dispatch]);
 
     return (
         <>
@@ -41,6 +47,9 @@ export const App = () => {
                     <Route element={<MainPage />}>
                         <Route path={Path.Main} element={<MainContent />} />
                         <Route path={Path.Calendar} element={<CalendarPage />} />
+                        <Route path={Path.Profile} element={<ProfilePage />} />
+                        <Route path={Path.Settings} element={<SettingsPage />} />
+
                     </Route>
                     <Route element={<MainPage />}>
                         <Route path={Path.Feetbacks} element={<Feedbacks />} />

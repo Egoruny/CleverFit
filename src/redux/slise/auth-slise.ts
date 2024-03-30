@@ -84,11 +84,15 @@ const authSlise = createSlice({
             state.error = true;
             state.isLogged = false;
         },
+        removeJwt(state) {
+            state.jwt = ''
+        }
     },
 });
 
 export const {
     setJwt,
+    removeJwt,
     setLogin,
     setPassword,
     setConfirmPassword,

@@ -1,0 +1,26 @@
+.title {
+    margin-bottom: 24px;
+    font-family: 'Inter';
+    font-weight: 700;
+}
+
+.tariff_costs {
+    display: flex;
+    flex-direction: column;
+    gap: 23px;
+    width: 100%;
+}
+
+.tariff_cost {
+    width: 100%;
+    max-width: 267px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #262626;
+}
+
+.tariff_cost > span {
+    font-family: 'Inter';
+    font-weight: 400;
+}

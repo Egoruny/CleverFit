@@ -11,16 +11,13 @@
     clip-path: polygon(0 0, 100% 20%, 100% 80%, 0% 100%);
     box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.15);
     z-index: 1;
- }
+}
 
-
-
- @media (max-width: 360px) {
+@media (max-width: 360px) {
     .switcher {
         height: 48px;
         width: 32px;
         top: 48px;
         z-index: 2;
     }
-
-    }
+}

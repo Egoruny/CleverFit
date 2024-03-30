@@ -1,4 +1,6 @@
 import { Button, Card, Col, Row } from 'antd';
+import { Path } from '@utils/constans/url';
+import { useNavigate } from 'react-router-dom';
 import { getTraningListStart } from '@redux/slise/traningList-slise';
 import style from './cards-begin-taining.module.css';
 
@@ -48,9 +50,11 @@ const cardsBeginTraining = [
 ];
 
 const Cards: React.FC = () => {
+const navigate = useNavigate()
 const dispatch = useAppDispatch()
 
-const onHandleClick = () => dispatch(getTraningListStart())
+const onHandleClickCalendar = () => dispatch(getTraningListStart())
+const onHandleClickProfile = () => navigate(Path.Profile)
 
 
     return (
@@ -89,7 +93,7 @@ const onHandleClick = () => dispatch(getTraningListStart())
                             className={style.card_button}
                             icon={<CalendarTwoTone twoToneColor={['#2F54EB', '#2F54EB']} />}
                             size='middle'
-                            onClick={onHandleClick}
+                            onClick={onHandleClickCalendar}
                         >
                             <span>Календарь</span>
                         </Button>
@@ -108,6 +112,8 @@ const onHandleClick = () => dispatch(getTraningListStart())
                         }}
                     >
                         <Button
+                        data-test-id='menu-button-profile'
+                        onClick={onHandleClickProfile}
                             className={style.card_button}
                             icon={<IdcardOutlined />}
                             size='middle'

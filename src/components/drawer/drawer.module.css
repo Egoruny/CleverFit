@@ -1,4 +1,4 @@
-.discription_container {
+/* .discription_container {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -26,4 +26,15 @@
 
 .add_btn {
     color: #1890ff;
+} */
+
+.footer_content {
+    display: flex;
+    justify-content: center;
+}
+
+@media (max-width: 480px) {
+    .footer_content {
+       
+    }
 }

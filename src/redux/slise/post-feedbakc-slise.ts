@@ -14,6 +14,10 @@ const postFeedbacSlice = createSlice({
             state.isPostfeeedbacksLogged = true;
             state.postfeedbacksError = false;
         },
+        postFeedbacksSettingsStart(state) {
+            state.isPostfeeedbacksLogged = true;
+            state.postfeedbacksError = false;
+        },
         postFeedbacksSaccses(state) {
             state.isPostfeeedbacksLogged = false;
             state.postFeedbakcSuccess = !state.postFeedbakcSuccess;
@@ -25,7 +29,7 @@ const postFeedbacSlice = createSlice({
     },
 });
 
-export const { postFeedbacksStart, postFeedbacksSaccses, postFeedbacksError } =
+export const { postFeedbacksStart, postFeedbacksSaccses, postFeedbacksError,postFeedbacksSettingsStart } =
     postFeedbacSlice.actions;
 
 export default postFeedbacSlice.reducer;

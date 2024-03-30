@@ -12,6 +12,8 @@ import treningModalsSlice from './slise/trening-modals-slice';
 import createTraningSlice from './slise/create-traning-slice';
 import updateTreningSlice from './slise/update-trening-slice';
 import appSlise from './slise/app-slice';
+import profileSlice from './slise/profile-slice';
+import tariffSlice from './slise/tariff-slice';
 import { runSaga } from './index';
 
 const sagaMiddleware = createSagaMiddleware();
@@ -32,6 +34,8 @@ export const store = configureStore({
         treningModals:treningModalsSlice,
         createTraning:createTraningSlice,
         updateTrening:updateTreningSlice,
+        profile:profileSlice,
+        tarif:tariffSlice,
         router: routerReducer,
     }),
     middleware: (getDefaultMiddleware) =>

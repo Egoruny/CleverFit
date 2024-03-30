@@ -6,6 +6,37 @@
     z-index: 5;
 }
 
+.discription_container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: 'Inter';
+    font-weight: 500;
+}
+
+.inputs_drawer {
+    max-height: 900px;
+    margin-top: 32px;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.btn_wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 24px;
+    height: 40px;
+    background: #f0f0f0;
+    padding: 0 0 0 5px;
+}
+
+.add_btn {
+    color: #1890ff;
+}
+
+
 @media (max-width: 830px) {
     .modal_wrapper {
         min-width: 312px;

@@ -1,5 +1,6 @@
 .ant-drawer-content {
     border-radius: 8px 0 0 0;
+    height: 100vh;
 }
 
 .ant-drawer-close {
@@ -19,6 +20,11 @@
     padding: 16px 32px;
 }
 
+.ant-drawer-footer {
+    width: 100%;
+    padding: 12px 32px;
+}
+
 @media (max-width: 480px) {
     .ant-drawer-content {
         margin-top: 80px;
@@ -29,5 +35,11 @@
     }
     .ant-drawer-header {
         padding: 24px 16px;
+    }
+    .ant-drawer-footer {
+        position: fixed;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
     }
 }

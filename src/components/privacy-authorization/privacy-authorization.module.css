@@ -1,0 +1,53 @@
+.wrapper {
+    max-width: 480px;
+}
+
+.privacy_title {
+    margin-bottom: 16px;
+}
+
+.privacy_information {
+    display: flex;
+}
+
+.privacy_information_form {
+    width: 100%;
+}
+
+.datepicker {
+    width: 100%;
+}
+
+.help_text {
+    font-family: 'Inter';
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 15px;
+}
+
+.password {
+    margin-bottom: 46px;
+}
+
+.repeat_password {
+    margin-bottom: 54px;
+}
+
+.btn_form {
+    background: #2f54eb;
+    color: white;
+}
+
+
+@media (max-width: 430px) {
+    .wrapper {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .privacy_information {
+        display: flex;
+        flex-direction: column-reverse;
+
+    }
+}
