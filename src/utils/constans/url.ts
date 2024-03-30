@@ -1,4 +1,5 @@
 export const URL = ' https://marathon-api.clevertec.ru';
+export const IMAGE_API =  'https://training-api.clevertec.ru'
 
 export const Path = {
     Root: '/',
@@ -17,5 +18,7 @@ export const Path = {
     ErrorChangePassword: '/result/error-change-password',
     SuccsesChangePasword: '/result/success-change-password',
     Feetbacks: '/feedbacks',
-    Calendar:'/main/calendar'
+    Calendar: '/main/calendar',
+    Profile: '/profile',
+    Settings: '/settings',
 } as const;

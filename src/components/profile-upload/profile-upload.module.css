@@ -1,0 +1,29 @@
+@media (max-width: 430px) {
+    .upload {
+        width: 100%;
+    }
+
+    :global .ant-upload {
+        width: 100%;
+    }
+    .upliad_mobile {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+    }
+
+    .text {
+        font-weight: 400;
+    }
+
+    .upload_btn {
+        max-width: 130px;
+    }
+    .upload_btn > span {
+        font-family: 'Inter';
+        font-weight: 400;
+        color:#262626;
+    }
+
+}

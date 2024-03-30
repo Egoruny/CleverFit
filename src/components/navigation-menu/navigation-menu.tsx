@@ -20,7 +20,7 @@ const itemsMenu = [
     },
     {
         key: '2',
-        icon: <HeartFilled style={iconsColor} />,
+        icon:<HeartFilled style={iconsColor} />,
         label: 'Тренировки',
     },
     {
@@ -30,7 +30,7 @@ const itemsMenu = [
     },
     {
         key: '4',
-        icon: <IdcardOutlined style={iconsColor} />,
+        icon:  <Link to={Path.Profile}><IdcardOutlined style={iconsColor} /></Link>,
         label: 'Профиль',
     },
 ];

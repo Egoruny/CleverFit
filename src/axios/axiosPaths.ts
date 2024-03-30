@@ -5,8 +5,13 @@ export const AxiosPaths = {
     CONFIRM_EMAIL: '/auth/confirm-email',
     FORGOT_PASS: '/confirm-email',
     CHANGE_PASSWORD: '/auth/change-password',
-    FEEDBACK:'/feedback',
-    TRANING:'/training',
-    TRANING_CATALOG:'/catalogs/training-list',
-    CREATE_TRANING:'/create-training'
+    FEEDBACK: '/feedback',
+    TRANING: '/training',
+    TRANING_CATALOG: '/catalogs/training-list',
+    CREATE_TRANING: '/create-training',
+    UPLOAD_IMAGE: '/upload-image',
+    CURRENT_USER: '/user/me',
+    USER: '/user',
+    TARIFF_CATALOGS: '/catalogs/tariff-list',
+    TARIFF: '/tariff',
 };

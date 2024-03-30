@@ -9,6 +9,10 @@
 @import url('./components/empy-content/empty-conten.css');
 @import url('./pages/calendar-page/calendar-page.css');
 @import url('./components/drawer/drawer.css');
+@import url('./components/profile-upload/profile-upload.css');
+@import url('./components/swich-filed/swich-filed.css');
+@import url('./components/privacy-authorization/privacy-authorization.css');
+@import url('./components/tariff-costs/tariff-cost.css');
 
 *,
 *::before,

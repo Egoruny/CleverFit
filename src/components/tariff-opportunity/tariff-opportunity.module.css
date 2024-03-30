@@ -1,0 +1,25 @@
+.wrapper {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    padding-right: 16px;
+    align-items: center;
+    max-height: 18px;
+}
+
+.icon_wrapper {
+    display: flex;
+    align-items: center;
+    gap: 52px;
+}
+
+.text {
+    font-family: 'Inter';
+    color: #262626;
+}
+
+
+.free_tarif_icon,.pro_tarif_icon {
+    display: flex;
+    align-items: center;
+}

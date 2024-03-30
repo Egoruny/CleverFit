@@ -1,0 +1,10 @@
+.alert_wrapper {
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translate(-50%);
+}
+
+.alert {
+    max-width: 390px;
+}

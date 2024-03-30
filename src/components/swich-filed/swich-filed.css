@@ -1,0 +1,15 @@
+.ant-switch-checked {
+    background: #2f54eb;
+}
+.tooltip_wrapper {
+    display: flex;
+    align-items: end;
+    height: 100%;
+}
+
+@media (max-width: 430px) {
+    .title {
+        display: flex;
+        align-items: baseline;
+    }
+}

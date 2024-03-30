@@ -23,3 +23,4 @@ export const selectedTraningSelect = (state: RootState) => state.traningList.sel
 export const prevDataSelect = (state: RootState) => state.treningModals.prevData;
 export const updateErrorSelect = (state: RootState) => state.updateTrening.UpdateTraningError;
 export const createErrorSelect = (state: RootState) => state.createTraning.error;
+export const tarifSelect = (state: RootState) => state.tarif.tarifBody

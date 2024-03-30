@@ -5,7 +5,12 @@ import style from './calendar-not-varification-modal.module.css';
 
 const { Title, Text } = Typography;
 
-const ClanedarNotVarificationModal = () => {
+type ClanedarNotVarificationModalProps = {
+    text?:string
+    title?:string
+}
+
+const ClanedarNotVarificationModal = ({ text, title }:ClanedarNotVarificationModalProps) => {
     const [canselModal, setCanselModal] = useState(true);
     const handleCansel = () => setCanselModal(false);
     return (
@@ -32,17 +37,18 @@ const ClanedarNotVarificationModal = () => {
                         <div className={style.modal_title}>
                             <Title level={4} data-test-id='modal-error-user-training-title'>
                                 {' '}
-                                При сохранении данных произошла ошибка{' '}
+                                {title || 'При сохранении данных произошла ошибка'}{' '}
                             </Title>
                             <Text data-test-id='modal-error-user-training-subtitle'>
-                                Придётся попробовать ещё раз
+                                {text || 'Придётся попробовать ещё раз'}
                             </Text>
                         </div>
                     </div>
 
                     <div className={style.moda_footer}>
                         <Button
-                            data-test-id='modal-error-user-training-button'
+                            // data-test-id='modal-error-user-training-button'
+                            data-test-id='big-file-error-close'
                             onClick={handleCansel}
                             className={style.modal_footer_btn}
                             size='large'

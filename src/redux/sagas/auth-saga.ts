@@ -2,6 +2,7 @@ import { instance } from '../../axios/axsios';
 import { AxiosPaths } from '../../axios/axiosPaths';
 import { Path } from '../../utils/constans/url';
 import { call, put, takeLatest } from 'redux-saga/effects';
+import { getProfileStart } from '@redux/slise/profile-slice';
 import {
     setJwt,
     postLoginStart,
@@ -24,6 +25,7 @@ import { push } from 'redux-first-history';
 
 function* loginWorker({ payload: { password, email, isRemember, location } }) {
     try {
+
         const { data } = yield call(instance.post, AxiosPaths.LOG_IN, { email, password });
         yield put(setJwt(data.accessToken));
         yield put(push(Path.Main, location));

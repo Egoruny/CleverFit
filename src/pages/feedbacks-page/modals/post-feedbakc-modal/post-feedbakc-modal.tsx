@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { Button, Form, Input, Modal, Typography } from 'antd';
-import { postFeedbacksStart } from '@redux/slise/post-feedbakc-slise';
+
 import { useAppDispatch, useAppSelector } from '@redux/configure-store';
 import { postfeedbacksError, postFeedbakcSuccess } from '../../../../redux/slise/select';
 import CastomRate from '@components/custom-rate/castom-rate';
@@ -9,7 +9,7 @@ import ResultModal from '../result-modals/result-modal';
 
 const { TextArea } = Input;
 const { Title } = Typography;
-const PostFeedbakcModal = ({ openModal, setOpenModal }) => {
+const PostFeedbakcModal = ({ openModal, setOpenModal,hadleSubmit }) => {
     const error = useAppSelector(postfeedbacksError);
     const success = useAppSelector(postFeedbakcSuccess);
     const dispatch = useAppDispatch();
@@ -19,7 +19,7 @@ const PostFeedbakcModal = ({ openModal, setOpenModal }) => {
 
     const canselModal = () => setOpenModal(false);
 
-    const hadleSubmit = ({ message, rating }) => dispatch(postFeedbacksStart({ message, rating }));
+
 
     useEffect(() => {
         if (success) {

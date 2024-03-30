@@ -2,6 +2,7 @@ import { instance } from '../../axios/axsios';
 import { AxiosPaths } from '../../axios/axiosPaths';
 import { Path } from '../../utils/constans/url';
 import { push } from 'redux-first-history';
+import { jwtSelect } from '@redux/slise/select';
 import { call, put, takeLatest, select } from 'redux-saga/effects';
 import {
     usersFedbacksAction,
@@ -13,11 +14,12 @@ import {
     postFeedbacksStart,
     postFeedbacksSaccses,
     postFeedbacksError,
+    postFeedbacksSettingsStart
 } from '@redux/slise/post-feedbakc-slise';
 
 function* getFeedbacksWorker() {
     try {
-        const jwt: boolean | string = yield select((state) => state.app.jwt);
+        const jwt: boolean | string = yield select(jwtSelect);
         const headers = {
             Authorization: `Bearer ${jwt}`,
         };
@@ -39,9 +41,9 @@ function* getFeedbacksWorker() {
 
 function* postFeedbacksWorker({ payload: { message, rating } }) {
     try {
-        const jwt: boolean | string = yield select((state) => state.app.jwt);
+        const jwt: boolean | string = yield select(jwtSelect);
         const headers = {
-            Authorization: `Bearer ${jwt}`,
+            Authorization: `Bearer ${jwt}`
         };
         yield call(instance.post, AxiosPaths.FEEDBACK, { message, rating }, { headers });
         yield put(getFeedbacksStart());
@@ -51,7 +53,22 @@ function* postFeedbacksWorker({ payload: { message, rating } }) {
     }
 }
 
+
+function* postFeedbacksSettingsWorker({ payload: { message, rating } }) {
+    try {
+        const jwt: boolean | string = yield select(jwtSelect);
+        const headers = {
+            Authorization: `Bearer ${jwt}`
+        };
+        yield call(instance.post, AxiosPaths.FEEDBACK, { message, rating }, { headers });
+        yield put(postFeedbacksSaccses());
+    } catch (error) {
+        yield put(postFeedbacksError(true));
+    }
+}
+
 export function* feedbacksSagaWother() {
     yield takeLatest(getFeedbacksStart.type, getFeedbacksWorker);
     yield takeLatest(postFeedbacksStart.type, postFeedbacksWorker);
+    yield takeLatest(postFeedbacksSettingsStart.type, postFeedbacksSettingsWorker);
 }
