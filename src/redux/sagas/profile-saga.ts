@@ -31,8 +31,8 @@ function* getUserWorker() {
         const { data } = yield call(instance.get, AxiosPaths.CURRENT_USER, { headers });
         yield put(setProfile(data));
     } catch (error) {
-        yield put(getProfileStart());
-        // yield put(push(Path.Login));
+     
+        yield put(push(Path.Login));
     }
 }
 function* putUserWorker({ payload: body }) {

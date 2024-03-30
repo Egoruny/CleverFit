@@ -127,7 +127,7 @@ const ProfileUpload = ({ imgSrc }: ProfileUploadProps) => {
                     fileList={fileList}
                     onPreview={handlePreview}
                     onChange={handleChange}
-                    // accept='image/*'
+                    accept='image/*'
                     progress={{ strokeWidth: 4, showInfo: false, size: 'default' }}
                 >
                     {!shouldShowPreview  && uploadButton}
