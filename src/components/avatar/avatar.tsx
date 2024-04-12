@@ -25,19 +25,10 @@ const AvatarUser = ({alt,src,backgroundColor,name,surname,index,searchValue,isUs
             <UserOutlined style={{color:'black'}}/>}
         />
         <div className={style.fullName}  >
-            {/* {isUserCard ? (
-                <p data-test-id={`joint-training-cards${index}`}
-                    className={style.finded_users}
-                    dangerouslySetInnerHTML={{ __html: highlightSubStr() }}
-                />
-            ) : (
-                <p className='join-users-item__name'>{name} </p>
-            )} */}
-
         <p >
-           {name} {surname}
+        {name} {surname}
             </p>
-        {/* <p>{surname}</p> */}
+
         </div>
         </>
     )

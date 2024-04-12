@@ -33,7 +33,6 @@ const ClanedarNotVarificationModal = ({ text, title,onClose }:ClanedarNotVarific
                 <div className={style.modal_title_wrapper}>
                     <div className={style.modal_title_header}>
                         <Button
-                            // data-test-id='modal-error-user-training-button-close'
                             data-test-id='modal-error-user-training-button'
                             onClick={handleCansel}
                             icon={<CloseCircleOutlined />}
@@ -55,7 +54,6 @@ const ClanedarNotVarificationModal = ({ text, title,onClose }:ClanedarNotVarific
                         <Button
                             data-test-id='modal-error-user-training-button'
                             
-                            // data-test-id='big-file-error-close'
                             onClick={handleCansel}
                             className={style.modal_footer_btn}
                             size='large'

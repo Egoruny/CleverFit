@@ -14,15 +14,7 @@ const JoinUserCard = ({ user, index, onChangeHandler, searchValue }) => {
     const isAccepted = user.status === inviteStaus.accepted;
     const isPending = user.status === inviteStaus.pending;
     const isRejected = user.status === inviteStaus.regected;
-    const [awaitConfirm, setAwaitConfirm] = useState(false);
-    const [rejectedConfirm, setRejectedConfirm] = useState(false);
-    const [acceptedConfirm, setAcceptedConfirm] = useState(false);
-
-    useEffect(() => {
-        if (user.status === inviteStaus.pending) setAwaitConfirm(true);
-        if (user.status === inviteStaus.regected) setRejectedConfirm(true);
-        if (user.status === inviteStaus.accepted) setAcceptedConfirm(true);
-    }, [user.status]);
+console.log()
 
     return (
         <Card
@@ -35,8 +27,6 @@ const JoinUserCard = ({ user, index, onChangeHandler, searchValue }) => {
                 gap: '12px',
             }}
         >
-            <div> {name}
-                {surname}</div>
             <div className={style.user_info}>
                 <AvatarUser
                     isUserCard={true}
@@ -88,7 +78,17 @@ const JoinUserCard = ({ user, index, onChangeHandler, searchValue }) => {
                     Создать тренировку
                 </Button>
                 <div className={style.trening_status}>
-                    {user.status && (
+                 <span>ожидает подтверждения</span>
+                </div>
+            </div>
+        </Card>
+    );
+};
+
+export default JoinUserCard;
+
+
+   {/* {user.status && (
                         <>
                             <span>
                                 {' '}
@@ -102,11 +102,4 @@ const JoinUserCard = ({ user, index, onChangeHandler, searchValue }) => {
                                 <ExclamationCircleOutlined style={{ color: '#8C8C8C' }} />
                             )}
                         </>
-                    )}
-                </div>
-            </div>
-        </Card>
-    );
-};
-
-export default JoinUserCard;
+                    )} */}

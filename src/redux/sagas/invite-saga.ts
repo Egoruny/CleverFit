@@ -24,7 +24,7 @@ import {
     getJoinTeningRequestsStart,
 } from '@redux/slise/join-tening-requests-slice';
 
-import { getJoinUsersStart } from '@redux/slise/join-trening-slice';
+import { getJoinUsersStart,setjoingUsers } from '@redux/slise/join-trening-slice';
 
 import {
     putSendRequestStart,
@@ -67,12 +67,14 @@ function* postInviteWorker() {
         yield put(setTreningId(data._id));
         const userId: string = yield select(userIdSelect);
         const treningID: string = yield select(treningIdSelect);
-        const { inviteData } = yield call(
+ yield call(
             instance.post,
             AxiosPaths.INVITE,
             { to: userId, trainingId: treningID },
             { headers },
         );
+
+
         yield put(postInviteSuccess());
         yield put(getJoinUsersStart());
 

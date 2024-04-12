@@ -79,7 +79,6 @@ function* putUpdateMyTraningWorker() {
         const { data } = yield call(instance.put, `${AxiosPaths.TRANING}/${body._id}`, body, {
             headers,
         });
-        // yield put(setSelectedTraning(data));
         yield put(putUpdateMyTraningSuccess());
         yield put(getTreningsStart());
     } catch (error) {

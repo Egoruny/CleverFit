@@ -23,7 +23,6 @@ const CastomDrawer = ({
     const desctopVersionT = useAppSelector(desctopVersionSelect);
     return (
         <Drawer
-            // data-test-id='tariff-sider'
             data-test-id='modal-drawer-right'
             width={desctopVersionT ? 408 : '100%'}
             title={<Title level={4}>{title}</Title>}

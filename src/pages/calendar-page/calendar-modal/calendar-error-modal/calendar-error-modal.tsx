@@ -22,7 +22,6 @@ const CalendarModal = ({updateHandler}) => {
     const handleRepeatRequest = () => dispath(getTraningCatalogsStart());
     return (
         <Modal
-            // data-test-id='modal-error-user-training-button'
             bodyStyle={{ padding: '16px 24px 16px 24px' }}
             style={{ maxWidth: '384px' }}
             open={canselModal}

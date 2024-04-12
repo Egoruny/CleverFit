@@ -765,154 +765,154 @@ describe('Sprint 6', () => {
             }).as('getUser');
         });
 
-        // it('come to trainings', () => {
-        //     cy.viewport(1440, 900);
-        //     cy.intercept('GET', 'training', {
-        //         statusCode: 400,
-        //     }).as('getUserTraining');
-        //     cy.intercept('GET', 'catalogs/training-list', {
-        //         statusCode: 400,
-        //     }).as('getTrainingList');
-        //     cy.get(`[data-test-id=${DATA_TEST_ID.menuButtonTraining}]`).click();
-        //     cy.url().should('include', '/main');
-        //     takeScreenshots('come-to-trainings-1', resolutionLaptop);
-        //     cy.get(`[data-test-id=${DATA_TEST_ID.modalNoReview}]`).within(() => {
-        //         cy.contains('Что-то пошло не так');
-        //         cy.contains('Произошла ошибка, попробуйте ещё раз.');
-        //         cy.contains('Назад').click();
-        //     });
-        //     cy.url().should('include', '/main');
-        //     cy.intercept('GET', 'training', {
-        //         statusCode: 200,
-        //         body: userTraining,
-        //     }).as('getUserTraining');
-        //     cy.get(`[data-test-id=${DATA_TEST_ID.menuButtonTraining}]`).click();
-        //     cy.url().should('include', '/training');
-        //     cy.get(`[data-test-id=${DATA_TEST_ID.modalErrorUserTrainingButton}]`).click();
-        //     cy.get(`[data-test-id=${DATA_TEST_ID.modalErrorUserTrainingButtonClose}]`).click();
-        //     cy.url().should('include', '/training');
-        //     cy.intercept('GET', 'catalogs/training-list', {
-        //         body: trainingList,
-        //         statusCode: 200,
-        //     }).as('getTrainingList');
-        //     cy.contains('Главная').click();
-        //     cy.get(`[data-test-id=${DATA_TEST_ID.menuButtonTraining}]`).click();
-        //     takeScreenshots('come-to-trainings-1', resolutionLaptop);
-        // });
+        it('come to trainings', () => {
+            cy.viewport(1440, 900);
+            cy.intercept('GET', 'training', {
+                statusCode: 400,
+            }).as('getUserTraining');
+            cy.intercept('GET', 'catalogs/training-list', {
+                statusCode: 400,
+            }).as('getTrainingList');
+            cy.get(`[data-test-id=${DATA_TEST_ID.menuButtonTraining}]`).click();
+            cy.url().should('include', '/main');
+            takeScreenshots('come-to-trainings-1', resolutionLaptop);
+            cy.get(`[data-test-id=${DATA_TEST_ID.modalNoReview}]`).within(() => {
+                cy.contains('Что-то пошло не так');
+                cy.contains('Произошла ошибка, попробуйте ещё раз.');
+                cy.contains('Назад').click();
+            });
+            cy.url().should('include', '/main');
+            cy.intercept('GET', 'training', {
+                statusCode: 200,
+                body: userTraining,
+            }).as('getUserTraining');
+            cy.get(`[data-test-id=${DATA_TEST_ID.menuButtonTraining}]`).click();
+            cy.url().should('include', '/training');
+            cy.get(`[data-test-id=${DATA_TEST_ID.modalErrorUserTrainingButton}]`).click();
+            cy.get(`[data-test-id=${DATA_TEST_ID.modalErrorUserTrainingButtonClose}]`).click();
+            cy.url().should('include', '/training');
+            cy.intercept('GET', 'catalogs/training-list', {
+                body: trainingList,
+                statusCode: 200,
+            }).as('getTrainingList');
+            cy.contains('Главная').click();
+            cy.get(`[data-test-id=${DATA_TEST_ID.menuButtonTraining}]`).click();
+            takeScreenshots('come-to-trainings-1', resolutionLaptop);
+        });
 
-        // it('create new training', () => {
-        //     cy.viewport(833, 900);
-        //     goToCalendar();
+        it('create new training', () => {
+            cy.viewport(833, 900);
+            goToCalendar();
 
-        //     // TODO Проверка на закрытие боковой модалки и нa несохранение данных в таком случае
-        //     cy.get(`[data-test-id=${DATA_TEST_ID.createNewTrainingButton}]`).click();
-        //     generalBlockCreatingTrainings();
-        //     cy.get(`[data-test-id=${DATA_TEST_ID.modalDrawerRightButtonClose}]`).click();
-        //     cy.get(`[data-test-id=${DATA_TEST_ID.myTrainingsTable}]`).within(() => {
-        //         cy.contains('Периодичность').click();
-        //         cy.contains('1 раз в неделю').should('not.exist');
-        //         cy.contains('Периодичность').click();
-        //         cy.contains('1 раз в неделю').should('not.exist');
-        //         cy.contains('Периодичность').click();
-        //     });
+            // TODO Проверка на закрытие боковой модалки и нa несохранение данных в таком случае
+            cy.get(`[data-test-id=${DATA_TEST_ID.createNewTrainingButton}]`).click();
+            generalBlockCreatingTrainings();
+            cy.get(`[data-test-id=${DATA_TEST_ID.modalDrawerRightButtonClose}]`).click();
+            cy.get(`[data-test-id=${DATA_TEST_ID.myTrainingsTable}]`).within(() => {
+                cy.contains('Периодичность').click();
+                cy.contains('1 раз в неделю').should('not.exist');
+                cy.contains('Периодичность').click();
+                cy.contains('1 раз в неделю').should('not.exist');
+                cy.contains('Периодичность').click();
+            });
 
-        //     // TODO  Проверка на ошибку создания тренировки
-        //     cy.get(`[data-test-id=${DATA_TEST_ID.createNewTrainingButton}]`).click();
-        //     generalBlockCreatingTrainings();
-        //     cy.get(`[data-test-id=${DATA_TEST_ID.modalDrawerRight}]`).within(() => {
-        //         cy.contains('Сохранить').click();
-        //     });
-        //     errorModal('create-new-training-1', resolutionTablet);
-        //     cy.get(`[data-test-id=${DATA_TEST_ID.myTrainingsTable}]`).within(() => {
-        //         cy.contains('Периодичность').click();
-        //         cy.contains('1 раз в неделю').should('not.exist');
-        //         cy.contains('Периодичность').click();
-        //         cy.contains('1 раз в неделю').should('not.exist');
-        //         cy.contains('Периодичность').click();
-        //     });
+            // TODO  Проверка на ошибку создания тренировки
+            cy.get(`[data-test-id=${DATA_TEST_ID.createNewTrainingButton}]`).click();
+            generalBlockCreatingTrainings();
+            cy.get(`[data-test-id=${DATA_TEST_ID.modalDrawerRight}]`).within(() => {
+                cy.contains('Сохранить').click();
+            });
+            errorModal('create-new-training-1', resolutionTablet);
+            cy.get(`[data-test-id=${DATA_TEST_ID.myTrainingsTable}]`).within(() => {
+                cy.contains('Периодичность').click();
+                cy.contains('1 раз в неделю').should('not.exist');
+                cy.contains('Периодичность').click();
+                cy.contains('1 раз в неделю').should('not.exist');
+                cy.contains('Периодичность').click();
+            });
 
-        //     // TODO  Проверка на успех создания тренировки
-        //     cy.get(`[data-test-id=${DATA_TEST_ID.createNewTrainingButton}]`).click();
-        //     generalBlockCreatingTrainings();
-        //     takeScreenshots('create-new-training-2', resolutionTablet);
-        //     cy.intercept('POST', 'training', {
-        //         body: newUserTraining1,
-        //         statusCode: 200,
-        //     }).as('postUserTraining');
-        //     cy.intercept('GET', 'training', {
-        //         body: [...userTraining, newUserTraining1],
-        //         statusCode: 200,
-        //     }).as('getUserTraining');
-        //     cy.get(`[data-test-id=${DATA_TEST_ID.modalDrawerRight}]`).within(() => {
-        //         cy.contains('Сохранить').click();
-        //     });
-        //     cy.get(`[data-test-id=${DATA_TEST_ID.createTrainingSuccessAlert}]`).within(() => {
-        //         cy.contains('Новая тренировка успешно добавлена').should('exist');
-        //     });
-        //     cy.get(`[data-test-id=${DATA_TEST_ID.myTrainingsTable}]`).within(() => {
-        //         cy.contains('Периодичность').click();
-        //         cy.contains('1 раз в неделю').should('not.exist');
-        //         cy.contains('Периодичность').click();
-        //         cy.contains('1 раз в неделю').should('exist');
-        //         cy.contains('Периодичность').click();
-        //     });
-        // });
+            // TODO  Проверка на успех создания тренировки
+            cy.get(`[data-test-id=${DATA_TEST_ID.createNewTrainingButton}]`).click();
+            generalBlockCreatingTrainings();
+            takeScreenshots('create-new-training-2', resolutionTablet);
+            cy.intercept('POST', 'training', {
+                body: newUserTraining1,
+                statusCode: 200,
+            }).as('postUserTraining');
+            cy.intercept('GET', 'training', {
+                body: [...userTraining, newUserTraining1],
+                statusCode: 200,
+            }).as('getUserTraining');
+            cy.get(`[data-test-id=${DATA_TEST_ID.modalDrawerRight}]`).within(() => {
+                cy.contains('Сохранить').click();
+            });
+            cy.get(`[data-test-id=${DATA_TEST_ID.createTrainingSuccessAlert}]`).within(() => {
+                cy.contains('Новая тренировка успешно добавлена').should('exist');
+            });
+            cy.get(`[data-test-id=${DATA_TEST_ID.myTrainingsTable}]`).within(() => {
+                cy.contains('Периодичность').click();
+                cy.contains('1 раз в неделю').should('not.exist');
+                cy.contains('Периодичность').click();
+                cy.contains('1 раз в неделю').should('exist');
+                cy.contains('Периодичность').click();
+            });
+        });
 
-        // it('update trainings', () => {
-        //     cy.viewport(360, 740);
-        //     goToCalendar();
+        it('update trainings', () => {
+            cy.viewport(360, 740);
+            goToCalendar();
 
-        //     // TODO Проверка изменения тренировок с ошибкой сохранения
-        //     cy.get(`[data-test-id=${DATA_TEST_ID.myTrainingsTable}]`).within(() => {
-        //         cy.get(`[data-test-id=${DATA_TEST_ID.updateMyTrainingTableIcon}${7}]`).click();
-        //     });
-        //     generalBlockUpdatingTrainings();
-        //     cy.get(`[data-test-id=${DATA_TEST_ID.modalDrawerRight}]`).within(() => {
-        //         cy.contains('Сохранить').click();
-        //     });
-        //     errorModal('update-trainings-1', resolutionMobile);
-        //     cy.get(`[data-test-id=${DATA_TEST_ID.myTrainingsTable}]`).within(() => {
-        //         cy.contains('Периодичность').click();
-        //         cy.contains('1 раз в неделю').should('not.exist');
-        //         cy.contains('Периодичность').click();
-        //         cy.contains('1 раз в неделю').should('not.exist');
-        //         cy.contains('Периодичность').click();
-        //     });
+            // TODO Проверка изменения тренировок с ошибкой сохранения
+            cy.get(`[data-test-id=${DATA_TEST_ID.myTrainingsTable}]`).within(() => {
+                cy.get(`[data-test-id=${DATA_TEST_ID.updateMyTrainingTableIcon}${7}]`).click();
+            });
+            generalBlockUpdatingTrainings();
+            cy.get(`[data-test-id=${DATA_TEST_ID.modalDrawerRight}]`).within(() => {
+                cy.contains('Сохранить').click();
+            });
+            errorModal('update-trainings-1', resolutionMobile);
+            cy.get(`[data-test-id=${DATA_TEST_ID.myTrainingsTable}]`).within(() => {
+                cy.contains('Периодичность').click();
+                cy.contains('1 раз в неделю').should('not.exist');
+                cy.contains('Периодичность').click();
+                cy.contains('1 раз в неделю').should('not.exist');
+                cy.contains('Периодичность').click();
+            });
 
-        //     // TODO  Проверка на успех изменения тренировки
-        //     cy.get(`[data-test-id=${DATA_TEST_ID.myTrainingsTable}]`).within(() => {
-        //         cy.get(`[data-test-id=${DATA_TEST_ID.updateMyTrainingTableIcon}${7}]`).click();
-        //     });
-        //     generalBlockUpdatingTrainings();
-        //     takeScreenshots('update-trainings-2', resolutionMobile);
-        //     cy.intercept('PUT', 'training/8', {
-        //         statusCode: 200,
-        //     }).as('putUserTraining');
-        //     cy.intercept('GET', 'training', {
-        //         body: userTraining.map((el) =>
-        //             el._id === '8'
-        //                 ? JSON.parse(
-        //                       JSON.stringify(returnUpdateUserTraining('8', threeDaysLater, false)),
-        //                   )
-        //                 : JSON.parse(JSON.stringify(el)),
-        //         ),
-        //         statusCode: 200,
-        //     }).as('getUserTraining');
-        //     cy.get(`[data-test-id=${DATA_TEST_ID.modalDrawerRight}]`).within(() => {
-        //         cy.contains('Сохранить').click();
-        //     });
-        //     cy.get(`[data-test-id=${DATA_TEST_ID.createTrainingSuccessAlert}]`).within(() => {
-        //         cy.contains('Тренировка успешно обновлена').should('exist');
-        //     });
-        //     cy.get(`[data-test-id=${DATA_TEST_ID.myTrainingsTable}]`).within(() => {
-        //         cy.contains('Периодичность').click();
-        //         cy.contains('1 раз в неделю').should('not.exist');
-        //         cy.contains('Периодичность').click();
-        //         cy.contains('1 раз в неделю').should('exist');
-        //         cy.contains('Периодичность').click();
-        //     });
-        //     takeScreenshots('update-trainings-3', resolutionMobile);
-        // });
+            // TODO  Проверка на успех изменения тренировки
+            cy.get(`[data-test-id=${DATA_TEST_ID.myTrainingsTable}]`).within(() => {
+                cy.get(`[data-test-id=${DATA_TEST_ID.updateMyTrainingTableIcon}${7}]`).click();
+            });
+            generalBlockUpdatingTrainings();
+            takeScreenshots('update-trainings-2', resolutionMobile);
+            cy.intercept('PUT', 'training/8', {
+                statusCode: 200,
+            }).as('putUserTraining');
+            cy.intercept('GET', 'training', {
+                body: userTraining.map((el) =>
+                    el._id === '8'
+                        ? JSON.parse(
+                              JSON.stringify(returnUpdateUserTraining('8', threeDaysLater, false)),
+                          )
+                        : JSON.parse(JSON.stringify(el)),
+                ),
+                statusCode: 200,
+            }).as('getUserTraining');
+            cy.get(`[data-test-id=${DATA_TEST_ID.modalDrawerRight}]`).within(() => {
+                cy.contains('Сохранить').click();
+            });
+            cy.get(`[data-test-id=${DATA_TEST_ID.createTrainingSuccessAlert}]`).within(() => {
+                cy.contains('Тренировка успешно обновлена').should('exist');
+            });
+            cy.get(`[data-test-id=${DATA_TEST_ID.myTrainingsTable}]`).within(() => {
+                cy.contains('Периодичность').click();
+                cy.contains('1 раз в неделю').should('not.exist');
+                cy.contains('Периодичность').click();
+                cy.contains('1 раз в неделю').should('exist');
+                cy.contains('Периодичность').click();
+            });
+            takeScreenshots('update-trainings-3', resolutionMobile);
+        });
 
         it('create joint training', () => {
             cy.viewport(1440, 900);

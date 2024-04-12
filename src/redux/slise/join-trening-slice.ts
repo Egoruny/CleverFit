@@ -51,6 +51,9 @@ const joinTreningSlice = createSlice({
         setTreningPartners(state, action) {
             state.treningPartners = action.payload;
         },
+        setjoingUsers(state,action) {
+            state.joinUsers = [action.payload]
+        }
         
     },
 });
@@ -65,6 +68,7 @@ export const {
     showJoinUsersList,
     setTraningType,
     setTreningPartners,
+    setjoingUsers
 } = joinTreningSlice.actions;
 
 export default joinTreningSlice.reducer;

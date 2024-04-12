@@ -15,7 +15,6 @@ const CastomAlert = ({ message,onClose,dataTest }: Props) => (
     >
         <Alert
             onClose={onClose}
-            //  data-test-id='alert'
             data-test-id={dataTest}
             message={message}
             type='success'

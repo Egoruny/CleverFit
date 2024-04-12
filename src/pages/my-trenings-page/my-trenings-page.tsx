@@ -1,6 +1,9 @@
-import { Layout, PageHeader, Button, Typography, Tabs ,Badge} from 'antd';
+import { Layout, PageHeader, Button, Breadcrumb, Tabs ,Badge} from 'antd';
+import { SettingOutlined } from '@ant-design/icons';
 import { useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import { getTariffsStart } from '@redux/slise/tariff-slice';
+
 import { traningCatalogsSelect } from '@redux/slise/select';
 import { userTraningListSelect, selectedDateSelect,showMypartnerSelect,joinTeningRequestsSelect } from '@redux/slise/select';
 import { useAppSelector, useAppDispatch } from '@redux/configure-store';
@@ -24,7 +27,9 @@ const MyTrningsPage = () => {
     const catalogError = useAppSelector(traningCatalogsErrorSelect);
     const isShowMyPartner = useAppSelector(showMypartnerSelect)
     const myInvites = useAppSelector(joinTeningRequestsSelect)
-console.log(isShowMyPartner)
+
+    const onClick = () => dispath(getTariffsStart())
+
     const tabsItems: TabsProps['items'] = [
         {
             label: 'Мои тренировки',
@@ -45,11 +50,33 @@ console.log(isShowMyPartner)
 
 
     return (
+        <>
+        <PageHeader   style={{ padding: '4px 24px 16px 24px', background: '#f0f5ff' }}>
+        <Breadcrumb>
+                <Breadcrumb.Item>
+                    <Link to={'/main'}>Главная</Link>
+                </Breadcrumb.Item>
+                <Breadcrumb.Item>Тренировки</Breadcrumb.Item>
+            </Breadcrumb>
+            <div className={style.set_btn_container}>
+                <Button
+                    className={style.set_button}
+                    icon={<SettingOutlined />}
+                    size='middle'
+                    type='text'
+                    onClick={onClick}
+                >
+                    <span className={style.button_text}>Настройки</span>
+                </Button>
+            </div>
+        </PageHeader>
         <Content className={style.wrapper}>
+            
             {catalogError && <CalendarModal />}
             <div><Link to={'/main'}>Главная</Link></div>
             <Tabs items={tabsItems}  className={style.tabs_header}/>
         </Content>
+        </>
     );
 };
 

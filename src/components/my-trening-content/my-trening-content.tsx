@@ -45,23 +45,9 @@ import CastomAlert from '@components/custom-alert/castom-alert';
 import ClanedarNotVarificationModal from '@pages/calendar-page/calendar-modal/calendar-not-varification-modal/calendar-not-varification-modal';
 
 import style from './my-trening-content.module.css';
-import { retry } from 'redux-saga/effects';
 
-{
-    /* <Select
-// suffixIcon={
-//     <DownOutlined
-//         style={{
-//             color: '#000000',
-//         }}
-//     />
-// }
-options={selectOptions}
-style={{ width: '100%', background: '#f0f0f0' }}
-defaultValue='Сортировка по периоду'
-bordered={false}
-/> */
-}
+
+
 
 const { Title } = Typography;
 const MyTreningContetnt = ({ catalog, treningList }) => {
