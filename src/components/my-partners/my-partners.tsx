@@ -1,4 +1,5 @@
 import { Typography, Button } from 'antd';
+import { useState } from 'react';
 import { useAppSelector } from '@redux/configure-store';
 import { treningPartnersSelect } from '@redux/slise/select';
 
@@ -10,12 +11,14 @@ const { Title, Text } = Typography;
 
 type MyPartnersProps = {
     activeModal?: boolean;
+    inviteList?:[]
 };
 
-const MyPartners = ({ activeModal }: MyPartnersProps) => {
-    const myTreningPartners = useAppSelector(treningPartnersSelect);
 
-console.log(myTreningPartners)
+const MyPartners = ({ activeModal,inviteList }: MyPartnersProps) => {
+    const myTreningPartners = useAppSelector(treningPartnersSelect);
+    const [renderUsers,setrenderUsers] = useState(useAppSelector(treningPartnersSelect))
+
     return (
         <>
             <div className={style.my_partners}>
@@ -24,10 +27,13 @@ console.log(myTreningPartners)
                 </div>
                 <div className={style.partners}>
                     {myTreningPartners.length ? (
-                        myTreningPartners.map(
+                        (renderUsers.length?renderUsers:myTreningPartners).map(
                             ({ imageSrc, name, avgWeightInWeek, trainingType,inviteId,id},index) => (
                                 <MyPartnersCard
-                                   index={index}
+                                    userID={id}
+                                    myTreningPartners={renderUsers}
+                                    inviteList={inviteList}
+                                    index={index}
                                     key={id}
                                     id={inviteId}
                                     isActiveModal={activeModal}
@@ -35,6 +41,7 @@ console.log(myTreningPartners)
                                     src={imageSrc}
                                     teningType={trainingType}
                                     avgWeightInWeek={avgWeightInWeek}
+                                    filteAr={setrenderUsers}
                                 />
                             ),
                         )

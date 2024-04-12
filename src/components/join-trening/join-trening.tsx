@@ -55,6 +55,7 @@ const JoinTrening = () => {
     const [isopenDrawer, setOpenDrawer] = useState(false);
     const [isRandomUsers,setIsrandomUsers] = useState(false)
     const [indexArray, setIndexeArray] = useState<number[]>([]);
+
     const [id, setId] = useState('');
     const dispatch = useAppDispatch();
     const isShowJoinUsersContent = useAppSelector(joinUsersContentSelect);
@@ -96,7 +97,8 @@ const JoinTrening = () => {
     const onChangeDate = (date) =>
         dispatch(setCreateSelectedTraning({ ...selectetTain, date: date?.toISOString() }));
 
-    const OpenDrawerHandler = (user, trningName, trening, userName, userSurname, UserSrc, id) => {
+    const OpenDrawerHandler = (user, trningName, trening, userName, userSurname, UserSrc, id,setdisable) => {
+        setdisable(true)
         dispatch(setCreateSelectedTraning({ ...trening, name: trningName }));
         setOpenDrawer(true);
         setName(userName);
@@ -107,7 +109,8 @@ const JoinTrening = () => {
     };
 
     const postInvate = () => {
-        closeDrawer();
+
+        setOpenDrawer(false);
         dispatch(setUserId(user.id));
         dispatch(postInviteStart());
     };
@@ -125,9 +128,8 @@ const JoinTrening = () => {
     if (isShowJoinUsersContent) {
         return (
             <>
-                <JoinUsersContent userList={userList} onChangeHandler={OpenDrawerHandler} />
+                <JoinUsersContent userList={userList} onChangeHandler={OpenDrawerHandler}/>
                 <CastomDrawer
-                   
                     onClose={closeDrawer}
                     open={isopenDrawer}
                     title={'Совместная тренировка'}
@@ -239,7 +241,7 @@ const JoinTrening = () => {
                     Выбор друга по моим тренировкам{' '}
                 </Button>
             </div>
-            <MyPartners activeModal={true} />
+            <MyPartners activeModal={true} inviteList={inviteList} />
         </div>
     );
 };

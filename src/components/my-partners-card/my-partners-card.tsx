@@ -3,6 +3,7 @@ import { CheckCircleFilled, ExclamationCircleOutlined} from '@ant-design/icons';
 import { useState } from 'react';
 import { deleteCansleTraningStart } from '@redux/slise/cansle-trening-slise';
 import { useAppDispatch } from '@redux/configure-store';
+import { setTreningPartners } from '@redux/slise/join-trening-slice';
 
 import AvatarUser from '@components/avatar/avatar';
 
@@ -15,17 +16,22 @@ type MyPartnersCardProps = {
     avgWeightInWeek: number;
     isActiveModal?: boolean;
     id:string
-    index:string
+    index:number
+    inviteList:[]
 };
 
 const MyPartnersCard = ({
+    inviteList,
     name,
     src,
     teningType,
     avgWeightInWeek,
     isActiveModal,
     id,
-    index
+    index,
+    myTreningPartners,
+    userID,
+    filteAr
 }: MyPartnersCardProps) => {
     const dispatch = useAppDispatch()
     const [isOpen, setOpen] = useState(false);
@@ -36,7 +42,8 @@ const MyPartnersCard = ({
     const closeModal = () => setOpen(false);
 
     const cansleTreningHandler =() => {
-        setOpen(false)
+        dispatch(setTreningPartners([]))
+         setOpen(false)
         dispatch(deleteCansleTraningStart({id}))
 
     }

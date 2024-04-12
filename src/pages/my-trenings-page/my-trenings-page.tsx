@@ -1,8 +1,8 @@
-import { Layout, PageHeader, Button, Typography, Tabs } from 'antd';
+import { Layout, PageHeader, Button, Typography, Tabs ,Badge} from 'antd';
 import { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { traningCatalogsSelect } from '@redux/slise/select';
-import { userTraningListSelect, selectedDateSelect,showMypartnerSelect } from '@redux/slise/select';
+import { userTraningListSelect, selectedDateSelect,showMypartnerSelect,joinTeningRequestsSelect } from '@redux/slise/select';
 import { useAppSelector, useAppDispatch } from '@redux/configure-store';
 import { traningCatalogsErrorSelect } from '@redux/slise/select';
 import CalendarModal from '@pages/calendar-page/calendar-modal/calendar-error-modal/calendar-error-modal';
@@ -23,7 +23,8 @@ const MyTrningsPage = () => {
     const catalog = useAppSelector(traningCatalogsSelect);
     const catalogError = useAppSelector(traningCatalogsErrorSelect);
     const isShowMyPartner = useAppSelector(showMypartnerSelect)
-
+    const myInvites = useAppSelector(joinTeningRequestsSelect)
+console.log(isShowMyPartner)
     const tabsItems: TabsProps['items'] = [
         {
             label: 'Мои тренировки',
@@ -31,7 +32,7 @@ const MyTrningsPage = () => {
             children: <MyTreningContetnt catalog={catalog} treningList={trenings} />,
         },
         {
-            label: 'Совместные тренировки',
+            label: <span>Совместные тренировки <Badge count={myInvites.length<4 ? myInvites?.length : 0}/></span>,
             key: 'group-workouts',
             children: isShowMyPartner?<MyPartners activeModal={true}/>:<JoinTrening/>,
         },

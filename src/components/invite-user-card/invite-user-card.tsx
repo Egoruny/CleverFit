@@ -17,6 +17,7 @@ const InviteUserCard = ({ user }) => {
     const openModal = () => setShowModal(true)
     const closeModal = () => setShowModal(false)
 
+console.log(user?.training?.date)
     const acceptSendHandler = () => {
         const id = user?._id;
         const status = 'accepted';
@@ -42,7 +43,7 @@ const InviteUserCard = ({ user }) => {
             </div>
             <div className={style.massege}>
                 <div className={style.date}>
-                    <Text type='secondary'>{moment(user.createdAt).format('DD.MM.YYYY')}</Text>
+                    <Text type='secondary'>{moment(user?.createdAt).format('DD.MM.YYYY')}</Text>
                 </div>
                 <div className={style.title}>
                     <Title level={5} style={{ color: '#061178', fontWeight: 'bold' }}>
@@ -60,7 +61,7 @@ const InviteUserCard = ({ user }) => {
                             exesise={user?.training?.exercises}
                             treningName={user?.training?.name}
                             period={user.training.parameters.period}
-                            date={user.createdAt}
+                            date={user.training?.date}
                         />
                     )}
                 </div>

@@ -1,7 +1,8 @@
-import { Menu } from 'antd';
+import { Menu,Badge } from 'antd';
 import style from './style.module.css';
 import { Path } from '../../utils/constans/url';
-import { useAppDispatch } from '@redux/configure-store';
+import { useAppDispatch,useAppSelector } from '@redux/configure-store';
+import { joinTeningRequestsSelect } from '@redux/slise/select';
 import { push } from 'redux-first-history';
 import { getTreningsStart } from '@redux/slise/my-trenings-slice';
 import { HeartFilled, TrophyFilled, CalendarTwoTone, IdcardOutlined } from '@ant-design/icons';
@@ -13,31 +14,10 @@ const iconsColor: React.CSSProperties = {
     paddingLeft: '0px',
 };
 
-const itemsMenu = [
-    {
-        key: '1',
-        icon: <CalendarTwoTone twoToneColor={['#061178', '#061178']} />,
-        label: ' Календарь',
-    },
-    {
-        key: '2',
-        icon: <HeartFilled  data-test-id='menu-button-training ' style={iconsColor} />,
-        label: 'Тренировки',
-    },
-    {
-        key: '3',
-        icon: <TrophyFilled style={iconsColor} />,
-        label: 'Достижения',
-    },
-    {
-        key: '4',
-        icon: <IdcardOutlined style={iconsColor} />,
-        label: 'Профиль',
-    },
-];
 
 const NavigationMenu: React.FC = () => {
     const dispatch = useAppDispatch();
+    const myInvites = useAppSelector(joinTeningRequestsSelect)
 
     const handleClick = (e) => {
         switch (e.key) {
@@ -54,6 +34,30 @@ const NavigationMenu: React.FC = () => {
                 break;
         }
     };
+
+    const itemsMenu = [
+        {
+            key: '1',
+            icon: <CalendarTwoTone twoToneColor={['#061178', '#061178']} />,
+            label: ' Календарь',
+        },
+        {
+            key: '2',
+            icon: <HeartFilled  data-test-id='menu-button-training ' style={iconsColor} />,
+            label: <span>Тренировки <Badge count={myInvites.length<4 ? myInvites?.length : 0} data-test-id='notification-about-joint-training'/></span>,
+        },
+        {
+            key: '3',
+            icon: <TrophyFilled style={iconsColor} />,
+            label: 'Достижения',
+        },
+        {
+            key: '4',
+            icon: <IdcardOutlined style={iconsColor} />,
+            label: 'Профиль',
+        },
+    ];
+    
 
     return (
         <Menu

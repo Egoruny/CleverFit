@@ -13,7 +13,6 @@ const AvatarUser = ({alt,src,backgroundColor,name,surname,index,searchValue,isUs
             : name;
 
 
-            console.log(highlightSubStr())
     return (
         <>
         <Avatar
@@ -25,16 +24,20 @@ const AvatarUser = ({alt,src,backgroundColor,name,surname,index,searchValue,isUs
                 !src && 
             <UserOutlined style={{color:'black'}}/>}
         />
-        <div className={style.fullName} data-test-id={`joint-training-cards${index}`} >
-            {isUserCard ? (
-                <p
+        <div className={style.fullName}  >
+            {/* {isUserCard ? (
+                <p data-test-id={`joint-training-cards${index}`}
                     className={style.finded_users}
                     dangerouslySetInnerHTML={{ __html: highlightSubStr() }}
                 />
             ) : (
-                <p className='join-users-item__name'>{name}</p>
-            )}
-        <p>{surname}</p>
+                <p className='join-users-item__name'>{name} </p>
+            )} */}
+
+        <p >
+           {name} {surname}
+            </p>
+        {/* <p>{surname}</p> */}
         </div>
         </>
     )

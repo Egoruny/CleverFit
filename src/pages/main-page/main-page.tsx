@@ -27,9 +27,9 @@ const MainPage: React.FC = () => {
     // }, [jwt, navigate, sessionStorageJwt]);
 
 
-    useEffect(() => {
-        dispatch(getProfileStart())
-    },[dispatch])
+    // useEffect(() => {
+    //     dispatch(getProfileStart())
+    // },[dispatch])
 
 
 

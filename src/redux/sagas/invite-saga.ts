@@ -60,6 +60,8 @@ function* postInviteWorker() {
         Authorization: `Bearer ${jwt}`,
     };
 
+    console.log(body)
+
     try {
         const { data } = yield call(instance.post, AxiosPaths.TRANING, body, { headers });
         yield put(setTreningId(data._id));
@@ -85,10 +87,12 @@ function* putSendReqestWorker({ payload: { id, status } }) {
         Authorization: `Bearer ${jwt}`,
     };
     try {
-        yield call(instance.put, AxiosPaths.INVITE, { id, status }, { headers });
+        const {data }=yield call(instance.put, AxiosPaths.INVITE, { id, status }, { headers });
         yield put(putSendRequestSuccess());
-        if(status === 'accepted '){
+
+        if(status === 'accepted'){
             yield put(setShowMypartner(true));
+ 
             yield put(getTreningPartnerStart());
         }
         yield put(getJoinTeningRequestsStart());
@@ -104,10 +108,11 @@ function* deleteJoinTraningWorker({payload:{id}}) {
         Authorization: `Bearer ${jwt}`,
     };
     try {
-        yield call(instance.delete, `${AxiosPaths.INVITE}/${id}`,  { headers });
+        const {data} = yield call(instance.delete, `${AxiosPaths.INVITE}/${id}`,  { headers });
         yield put(deleteCansleTraningSuccess())
         yield put(setShowMypartner(false));
-        yield put(getTreningPartnerStart());
+        // yield put(getTreningPartnerStart());
+        // yield put(getJoinTeningRequestsStart());
     } catch (error) {
 yield put(deleteCansleTraningError())
     }

@@ -196,58 +196,8 @@ const MyTreningContetnt = ({ catalog, treningList }) => {
     };
 
     return (
-        <>
-            {!treningList.length && (
-                <div className={style.wrapper_empty}>
-                    <div className={style.empty_treningList}>
-                        <Title level={3} style={{ fontWeight: 500 }}>
-                            У вас ещё нет созданных тренировок
-                        </Title>
-                        <div className={style.create_trening_btn}>
-                            <Button
-                                // data-test-id='create-new-training-button'
-                                className={style.empty_catalog_btn}
-                                size='large'
-                                onClick={openDrawer}
-                            >
-                                Создать тренировку
-                            </Button>
-                        </div>
-                    </div>
-
-                    <div className={style.trening_list_wrapper}></div>
-                </div>
-            )}
-            <div className={style.wrapper_fill}>
-                <div className={style.content}>
-                    <Table
-                        data-test-id='my-trainings-table'
-                        className={style.table}
-                        dataSource={treningList}
-                        columns={columns}
-                        showSorterTooltip={false}
-                        size='small'
-                        onHeaderRow={onHeaderRow}
-                        pagination={{
-                            size: 'small',
-                            defaultCurrent: 1,
-                            position: ['bottomLeft'],
-                            hideOnSinglePage: true,
-                        }}
-                    />
-                </div>
-                <Button
-                    data-test-id='create-new-training-button'
-                    onClick={openDrawer}
-                    className={style.new_trin_btn}
-                    type='primary'
-                    size='large'
-                    icon={<PlusOutlined />}
-                >
-                    Новая Тренировка
-                </Button>
-            </div>
-            <CastomDrawer
+   <>
+     <CastomDrawer
                 footerContent={
                     <Button
                         className={style.footer_btn}
@@ -324,23 +274,80 @@ const MyTreningContetnt = ({ catalog, treningList }) => {
                     </div>
                 </div>
             </CastomDrawer>
-            {showCreateAlert && (
-                <CastomAlert
-                    dataTest={'create-training-success-alert'}
-                    message='Новая тренировка успешно добавлена'
-                    onClose={closeCreateALertHandler}
+            {!treningList.length ? (
+                <>
+                <div className={style.wrapper_empty}>
+                    <div className={style.empty_treningList}>
+                        <Title level={3} style={{ fontWeight: 500 }}>
+                            У вас ещё нет созданных тренировок
+                        </Title>
+                        <div className={style.create_trening_btn}>
+                            <Button
+                                // data-test-id='create-new-training-button'
+                                className={style.empty_catalog_btn}
+                                size='large'
+                                onClick={openDrawer}
+                            >
+                                Создать тренировку
+                            </Button>
+                        </div>
+                    </div>
+
+                    <div className={style.trening_list_wrapper}></div>
+                </div>
+            </>
+            ):
+            <>
+            <div className={style.wrapper_fill}>
+            <div className={style.content}>
+                <Table
+                    data-test-id='my-trainings-table'
+                    className={style.table}
+                    dataSource={treningList}
+                    columns={columns}
+                    showSorterTooltip={false}
+                    size='small'
+                    onHeaderRow={onHeaderRow}
+                    pagination={{
+                        size: 'small',
+                        defaultCurrent: 1,
+                        position: ['bottomLeft'],
+                        hideOnSinglePage: true,
+                    }}
                 />
-            )}
-            {showUpdateAlert && (
-                <CastomAlert
-                dataTest='create-training-success-alert'
-                    message='Тренировка успешно обновлена'
-                    onClose={closeUpdateAlertHandler}
-                />
-            )}
-            {createTreningError && <ClanedarNotVarificationModal onClose={closeCreateModal} />}
-            {updateTreningError && <ClanedarNotVarificationModal onClose={closeUpdateModal} />}
+            </div>
+            <Button
+                data-test-id='create-new-training-button'
+                onClick={openDrawer}
+                className={style.new_trin_btn}
+                type='primary'
+                size='large'
+                icon={<PlusOutlined />}
+            >
+                Новая Тренировка
+            </Button>
+        </div>
+        
+        {showCreateAlert && (
+            <CastomAlert
+                dataTest={'create-training-success-alert'}
+                message='Новая тренировка успешно добавлена'
+                onClose={closeCreateALertHandler}
+            />
+        )}
+        {showUpdateAlert && (
+            <CastomAlert
+            dataTest='create-training-success-alert'
+                message='Тренировка успешно обновлена'
+                onClose={closeUpdateAlertHandler}
+            />
+        )}
+        {createTreningError && <ClanedarNotVarificationModal onClose={closeCreateModal} />}
+        {updateTreningError && <ClanedarNotVarificationModal onClose={closeUpdateModal} />}
         </>
+        }
+           
+           </>
     );
 };
 

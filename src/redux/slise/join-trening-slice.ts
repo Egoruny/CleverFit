@@ -6,10 +6,10 @@ const initialState = {
     isPartnersError: false,
     isJoinsersSusecc: false,
     isJoinsersError: false,
-    JoinUsersList:false,
+    JoinUsersList: false,
     joinUsers: [],
     treningPartners: [],
-    treningType:false
+    treningType: false,
 };
 
 const joinTreningSlice = createSlice({
@@ -35,24 +35,36 @@ const joinTreningSlice = createSlice({
         getJoinUsersSusecc(state, action) {
             state.isJoinsersError = false;
             state.isPartnersSusecc = true;
-            const sortUsers = action.payload.sort((a,b) => a.name.localeCompare(b.name))
-            state.joinUsers = sortUsers
-            
-
+            const sortUsers = action.payload.sort((a, b) => a.name.localeCompare(b.name));
+            state.joinUsers = sortUsers;
         },
         getJoinUsersError(state) {
             state.isJoinTreningLoad = false;
             state.isJoinsersError = true;
         },
-        showJoinUsersList(state,action) {
-            state.JoinUsersList = action.payload
+        showJoinUsersList(state, action) {
+            state.JoinUsersList = action.payload;
         },
-        setTraningType(state,action) {
-            state.treningType = action.payload
-        }
-}});
+        setTraningType(state, action) {
+            state.treningType = action.payload;
+        },
+        setTreningPartners(state, action) {
+            state.treningPartners = action.payload;
+        },
+        
+    },
+});
 
-export const { getTreningPartnerStart, getTreningPartnerSusecc, getTreningPartnerError,getJoinUsersStart,getJoinUsersSusecc,getJoinUsersError,showJoinUsersList,setTraningType } =
-    joinTreningSlice.actions;
+export const {
+    getTreningPartnerStart,
+    getTreningPartnerSusecc,
+    getTreningPartnerError,
+    getJoinUsersStart,
+    getJoinUsersSusecc,
+    getJoinUsersError,
+    showJoinUsersList,
+    setTraningType,
+    setTreningPartners,
+} = joinTreningSlice.actions;
 
 export default joinTreningSlice.reducer;
