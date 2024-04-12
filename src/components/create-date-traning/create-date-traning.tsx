@@ -47,6 +47,7 @@ const CreateDateTraning = ({
             {isCheced && (
                 <div style={{ width:block?'100%': '150px' }}>
                     <Select
+                        dropdownStyle={{height:'150px'}}
                         data-test-id='modal-drawer-right-select-period'
                         style={{ width: '100%' }}
                         options={PeriodOptions}
