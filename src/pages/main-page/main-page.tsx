@@ -5,6 +5,7 @@ import { useEffect } from 'react';
 import { jwtSelect } from '@redux/slise/select';
 import { useAppSelector,useAppDispatch } from '@redux/configure-store';
 import { getProfileStart } from '@redux/slise/profile-slice';
+
 import Loader from '@components/loader/loader';
 import 'antd/dist/antd.css';
 
@@ -19,16 +20,19 @@ const MainPage: React.FC = () => {
 
     const sessionStorageJwt = useAppSelector(jwtSelect);
 
-    useEffect(() => {
-        if (jwt === null && !sessionStorageJwt) {
-            navigate('/auth');
-        }
-    }, [jwt, navigate, sessionStorageJwt]);
+    // useEffect(() => {
+    //     if (jwt === null && !sessionStorageJwt) {
+    //         navigate('/auth');
+    //     }
+    // }, [jwt, navigate, sessionStorageJwt]);
 
 
     useEffect(() => {
         dispatch(getProfileStart())
     },[dispatch])
+
+
+
 
 
     return (

@@ -37,18 +37,22 @@ import {
     putUpdateTreningError,
 } from '@redux/slise/update-trening-slice';
 
+import { setModalError } from '../slise/trening-modals-slice';
+
 function* getTraningListWorker() {
+    const jwt: boolean | string = yield select(jwtSelect);
+    const headers = {
+        Authorization: `Bearer ${jwt}`,
+    };
+
     try {
-        const jwt: boolean | string = yield select(jwtSelect);
-        const headers = {
-            Authorization: `Bearer ${jwt}`,
-        };
-        yield put(push(Path.Calendar));
         const { data } = yield call(instance.get, AxiosPaths.TRANING, { headers });
+        yield put(push(Path.Calendar));
         yield put(setUseruserTraningList(data));
         yield put(getTraningListSaccses());
         yield put(getTraningCatalogsStart());
     } catch (error) {
+        yield put(setModalError(true))
         yield put(getTraningListError());
     }
 }

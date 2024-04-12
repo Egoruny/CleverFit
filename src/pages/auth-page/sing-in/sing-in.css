@@ -9,8 +9,7 @@
     min-height: 24px;
 }
 
-
 .ant-checkbox-checked .ant-checkbox-inner {
-    background-color: #2F54EB;
-    border-color: #2F54EB;
+    background-color: #2f54eb;
+    border-color: #2f54eb;
 }

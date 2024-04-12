@@ -13,11 +13,9 @@ import { CalendarModalStatus } from '@utils/constans/modal-status';
 import { useAppSelector, useAppDispatch } from '@redux/configure-store';
 import { calendarModalStatusSelect } from '@redux/slise/select';
 import { setSelectedTraning, setSelectedPrevTrain } from '@redux/slise/traningList-slise';
-import { userTraningListSelect, selectedDateSelect } from '@redux/slise/select';
-import { createExercise } from '@redux/slise/traningList-slise';
-import { deleteExercises } from '@redux/slise/traningList-slise';
-import { desctopVersionSelect } from '@redux/slise/select';
-import { selectedTraningSelect } from '@redux/slise/select';
+import { userTraningListSelect, selectedDateSelect,selectedTraningSelect,desctopVersionSelect } from '@redux/slise/select';
+import { createExercise,deleteExercises } from '@redux/slise/traningList-slise';
+
 
 import { getTrainingByDay } from '@utils/constans/traning';
 import style from './calendar-cell-modal.module.css';
@@ -53,7 +51,7 @@ const CalendarCellModal = ({ date, offsetTop }) => {
     };
 
     const onChangeTrainingHandler = (name: string) => {
-        const findedSelectTraning = trainingByDay.find((exercise) => exercise.name === name);
+        const findedSelectTraning = trainingByDay.find((exercise) => exercise?.name === name);
         if (findedSelectTraning) {
             dispatch(setSelectedTraning(findedSelectTraning));
             dispatch(setModalStatus(CalendarModalStatus.EXERCISES));
@@ -100,6 +98,8 @@ const CalendarCellModal = ({ date, offsetTop }) => {
                 )}
             </div>
             <CastomDrawer
+                closable={true}
+                title={isEdit?'Редактирование':'Добавление упражнений'}
                 open={isOpenDrawer}
                 onClose={closeDrawer}
                 date={date}
@@ -108,14 +108,14 @@ const CalendarCellModal = ({ date, offsetTop }) => {
             >
                 <div className={style.discription_container}>
                     <div>
-                        <CalendarCastomBage text={selectetTain.name} openedInDrawer={true} />
+                        <CalendarCastomBage text={selectetTain?.name} openedInDrawer={true} />
                     </div>
                     <div>
                         <Text type='secondary'>{date.format('DD.MM.YYYY')}</Text>
                     </div>
                 </div>
                 <div className={style.inputs_drawer}>
-                    {selectetTain.exercises?.map(({ name, approaches, weight, replays }, index) => (
+                    {selectetTain?.exercises?.map(({ name, approaches, weight, replays }, index) => (
                         <DrawerInput
                             key={index}
                             indexArray={indexArray}

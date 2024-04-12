@@ -1,6 +1,13 @@
 import { createSlice } from '@reduxjs/toolkit';
 import { stat } from 'fs';
 
+const parameters= {
+    repeat: false,
+    period: null,
+    jointTraining: false,
+    participants: [],
+};
+
 const initialExercise = {
     name: '',
     approaches: 1,
@@ -13,6 +20,7 @@ const initialTraining = {
     name: '',
     isImplementation: false,
     exercises: [initialExercise],
+    parameters,
 };
 
 const initialState = {
@@ -20,7 +28,7 @@ const initialState = {
     selectedTraning: initialTraining,
     isTraningListLoad: false,
     traningListError: false,
-    prevState:initialTraining,
+    prevState: initialTraining,
     userTraningList: [],
 };
 
@@ -28,8 +36,8 @@ const traningListSlise = createSlice({
     name: 'traningList',
     initialState,
     reducers: {
-        setPrevState(state,action) {
-            state.prevState = action.payload
+        setPrevState(state, action) {
+            state.prevState = action.payload;
             state.prevState.exercises = [initialExercise];
         },
         setSelectedDate(state, action) {
@@ -57,14 +65,18 @@ const traningListSlise = createSlice({
         },
         deleteExercises(state, action) {
             const indexArray = action.payload;
-            const updatedExercises = state.selectedTraning.exercises.filter((_, index) => !indexArray.includes(index));
-        const updatedSelectedTraning = { ...state.selectedTraning, exercises: updatedExercises }
-        return {...state,selectedTraning:updatedSelectedTraning}
+            const updatedExercises = state.selectedTraning.exercises.filter(
+                (_, index) => !indexArray.includes(index),
+            );
+            const updatedSelectedTraning = {
+                ...state.selectedTraning,
+                exercises: updatedExercises,
+            };
+            return { ...state, selectedTraning: updatedSelectedTraning };
         },
         setCreateSelectedTraning(state, action) {
             state.selectedTraning = action.payload;
             state.selectedTraning.exercises = [initialExercise];
-
         },
         setSelectedTraning(state, action) {
             state.selectedTraning = action.payload;
@@ -97,6 +109,15 @@ const traningListSlise = createSlice({
         resetCreatedTraining(state) {
             state.selectedTraning = initialTraining;
         },
+        setRepeat(state,action) {
+            state.selectedTraning.parameters.repeat = action.payload
+        },
+        setPeriod(state,action) {
+            state.selectedTraning.parameters.period = action.payload
+        },
+        setTreningDate(state,action) {
+            state.selectedTraning.date = action.payload
+        }
     },
 });
 
@@ -119,6 +140,9 @@ export const {
     setExerciseApproaches,
     deleteExercises,
     setExerciseReplays,
+    setPeriod,
+    setRepeat,
+    setTreningDate
 } = traningListSlise.actions;
 
 export default traningListSlise.reducer;

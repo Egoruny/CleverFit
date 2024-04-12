@@ -7,7 +7,6 @@ import MenuLogo from '@components/menu-logo/menu-logo';
 import SingIn from '../sing-in/sing-in';
 import Registration from './registration/registration';
 
-
 type AuthTab = (typeof AuthTab)[keyof typeof AuthTab];
 
 const AuthTab = {
@@ -18,21 +17,27 @@ const AuthTab = {
 const Auth = ({ tab = 'login' }: { tab?: AuthTab }) => {
     const navigate = useNavigate();
 
-
     const jwt = localStorage.getItem('jwt');
 
     useEffect(() => {
         if (jwt) {
-            return navigate(Path.Main);
+            return function (){
+                navigate(Path.Main);
+            }
         }
     }, [jwt, navigate]);
 
-
     const onChange = (activeKey: string) => {
-        if (activeKey === AuthTab.Login) {
-            navigate(Path.Login);
-        } else if (activeKey === AuthTab.Register) {
-            navigate(Path.Register);
+        switch (activeKey) {
+            case AuthTab.Login:
+                navigate(Path.Login);
+                break;
+            case AuthTab.Register:
+                navigate(Path.Register);
+                break;
+
+            default:
+                break;
         }
     };
 
@@ -44,12 +49,13 @@ const Auth = ({ tab = 'login' }: { tab?: AuthTab }) => {
                         <MenuLogo className />
                         <div className={style.modal_wrapper_blur_container_content}>
                             <Tabs
+                            className={style.tabs}
                                 activeKey={tab}
                                 onChange={onChange}
-                                tabBarStyle={{ position: 'relative', padding: 0 }}
+                                tabBarStyle={{padding: 0 }}
                                 hideAdd
                                 size='large'
-                                centered={true}
+                                centered
                                 items={[
                                     {
                                         label: `Вход`,

@@ -24,6 +24,9 @@
     width: 100%;
     padding: 12px 32px;
 }
+div.ant-typography, .ant-typography p {
+    margin-bottom: 0;
+}
 
 @media (max-width: 480px) {
     .ant-drawer-content {

@@ -2,6 +2,8 @@ import { Button, Card, Col, Row } from 'antd';
 import { Path } from '@utils/constans/url';
 import { useNavigate } from 'react-router-dom';
 import { getTraningListStart } from '@redux/slise/traningList-slise';
+import { getTreningsStart } from '@redux/slise/my-trenings-slice';
+
 import style from './cards-begin-taining.module.css';
 
 import { HeartFilled, CalendarTwoTone, IdcardOutlined } from '@ant-design/icons';
@@ -50,12 +52,12 @@ const cardsBeginTraining = [
 ];
 
 const Cards: React.FC = () => {
-const navigate = useNavigate()
-const dispatch = useAppDispatch()
+    const navigate = useNavigate();
+    const dispatch = useAppDispatch();
 
-const onHandleClickCalendar = () => dispatch(getTraningListStart())
-const onHandleClickProfile = () => navigate(Path.Profile)
-
+    const onHandleClickCalendar = () => dispatch(getTraningListStart());
+    const onHandleClickProfile = () => navigate(Path.Profile);
+    const onHandleClickMyTrenings = () => dispatch(getTreningsStart());
 
     return (
         <div className={style.card_wrapper}>
@@ -71,7 +73,13 @@ const onHandleClickProfile = () => navigate(Path.Profile)
                             justifyContent: 'center',
                         }}
                     >
-                        <Button className={style.card_button} icon={<HeartFilled />} size='middle'>
+                        <Button
+                            className={style.card_button}
+                            icon={<HeartFilled />}
+                            onClick={onHandleClickMyTrenings}
+                            data-test-id='menu-button-training'
+                            size='middle'
+                        >
                             <span>Тренировки</span>
                         </Button>
                     </Card>
@@ -112,8 +120,8 @@ const onHandleClickProfile = () => navigate(Path.Profile)
                         }}
                     >
                         <Button
-                        data-test-id='menu-button-profile'
-                        onClick={onHandleClickProfile}
+                            data-test-id='menu-button-profile'
+                            onClick={onHandleClickProfile}
                             className={style.card_button}
                             icon={<IdcardOutlined />}
                             size='middle'

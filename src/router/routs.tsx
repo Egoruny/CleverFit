@@ -24,6 +24,7 @@ import Feedbacks from '@pages/feedbacks-page/feedbacks';
 import CalendarPage from '@pages/calendar-page/calendar-page';
 import ProfilePage from '@pages/profile-page/profile-page';
 import SettingsPage from '@pages/settings-page/settings-page';
+import MyTrningsPage from '@pages/my-trenings-page/my-trenings-page';
 export const App = () => {
     const dispatch = useAppDispatch()
     const [serchParams] = useSearchParams();
@@ -49,7 +50,7 @@ export const App = () => {
                         <Route path={Path.Calendar} element={<CalendarPage />} />
                         <Route path={Path.Profile} element={<ProfilePage />} />
                         <Route path={Path.Settings} element={<SettingsPage />} />
-
+                        <Route path={Path.MyTrenings} element={<MyTrningsPage />} />
                     </Route>
                     <Route element={<MainPage />}>
                         <Route path={Path.Feetbacks} element={<Feedbacks />} />

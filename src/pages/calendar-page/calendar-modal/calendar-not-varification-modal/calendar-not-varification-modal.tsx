@@ -8,17 +8,22 @@ const { Title, Text } = Typography;
 type ClanedarNotVarificationModalProps = {
     text?:string
     title?:string
+    onClose:() => void
 }
 
-const ClanedarNotVarificationModal = ({ text, title }:ClanedarNotVarificationModalProps) => {
+const ClanedarNotVarificationModal = ({ text, title,onClose }:ClanedarNotVarificationModalProps) => {
     const [canselModal, setCanselModal] = useState(true);
-    const handleCansel = () => setCanselModal(false);
+    const handleCansel = () => {
+        setCanselModal(false);
+       
+    }
     return (
         <Modal
             className={style.error_modal}
             bodyStyle={{ padding: '32px 32px 24px 32px' }}
             open={canselModal}
             style={{ width: '330px' }}
+            afterClose={onClose}
             centered
             footer={null}
             closable={false}
@@ -28,7 +33,8 @@ const ClanedarNotVarificationModal = ({ text, title }:ClanedarNotVarificationMod
                 <div className={style.modal_title_wrapper}>
                     <div className={style.modal_title_header}>
                         <Button
-                            data-test-id='modal-error-user-training-button-close'
+                            // data-test-id='modal-error-user-training-button-close'
+                            data-test-id='modal-error-user-training-button'
                             onClick={handleCansel}
                             icon={<CloseCircleOutlined />}
                             className={style.close_btn}
@@ -47,8 +53,9 @@ const ClanedarNotVarificationModal = ({ text, title }:ClanedarNotVarificationMod
 
                     <div className={style.moda_footer}>
                         <Button
-                            // data-test-id='modal-error-user-training-button'
-                            data-test-id='big-file-error-close'
+                            data-test-id='modal-error-user-training-button'
+                            
+                            // data-test-id='big-file-error-close'
                             onClick={handleCansel}
                             className={style.modal_footer_btn}
                             size='large'

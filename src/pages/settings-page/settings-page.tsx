@@ -133,6 +133,8 @@ const SettingsPage = () => {
                 </div>
             </Layout.Content>
             <CastomDrawer
+                closable={false}
+                title={'Сравнить тарифы'}
                 open={isOpenDrawer}
                 onClose={closeDrawer}
                 desctopVersion={desctopVersion}

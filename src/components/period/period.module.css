@@ -1,0 +1,11 @@
+.wrapper {
+    max-width: 200px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.edit_btn {
+    border: none;
+    color: #2F54EB;
+}

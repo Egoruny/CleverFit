@@ -19,7 +19,7 @@ const DrawerInput = ({
     defaultValueWeight,
     defaultValueReplays,
 }) => {
-    const isChecked = indexArray.includes(index);
+    const isChecked = indexArray?.includes(index);
     const dispatch = useAppDispatch();
     const onChangeName = (e: React.ChangeEvent<HTMLInputElement>) =>
         dispatch(setExerciseName({ index, name: e.target.value }));
@@ -58,7 +58,7 @@ const DrawerInput = ({
                     <div>
                         <InputNumber
                             data-test-id={`modal-drawer-right-input-approach${index}`}
-                            defaultValue={defaultValueApproaches}
+                            value={defaultValueApproaches}
                             onChange={onChangeApproaches}
                             size='small'
                             addonBefore={'+'}
@@ -72,7 +72,7 @@ const DrawerInput = ({
                         <div>
                             <InputNumber
                                 data-test-id={`modal-drawer-right-input-weight${index}`}
-                                defaultValue={defaultValueWeight}
+                                value={defaultValueWeight}
                                 onChange={onChangeWeight}
                                 size='small'
                                 addonBefore={'+'}
@@ -88,7 +88,7 @@ const DrawerInput = ({
                         <div>
                             <InputNumber
                                 data-test-id={`modal-drawer-right-input-quantity${index}`}
-                                defaultValue={defaultValueReplays}
+                                value={defaultValueReplays}
                                 onChange={onChangeReplays}
                                 size='small'
                                 addonBefore={'+'}

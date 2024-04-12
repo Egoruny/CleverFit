@@ -1,0 +1,29 @@
+.wrapper {
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.modal {
+    position: absolute;
+    top: 0;
+    z-index: 1;
+    width: 100%;
+}
+
+.modal_header {
+    display: flex;
+    align-items:center;
+    gap: 6px;
+   padding: 12px 0;
+}
+
+.exercises {
+    height: 130px;
+}
+
+.close_btn {
+    border:none;
+}

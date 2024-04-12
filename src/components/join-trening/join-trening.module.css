@@ -1,0 +1,73 @@
+.wrapper {
+    margin-top: 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+ 
+}
+
+.title_conteiner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0 24px;
+}
+
+.title {
+    margin-bottom: 32px;
+}
+.text {
+    text-align: center;
+    max-width: 1000px;
+}
+
+.btn_container {
+    padding: 16px 0;
+    display: flex;
+    justify-content: space-around;
+}
+
+.my_partners {
+    margin-top: 24px;
+}
+
+.drawer_header {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+
+.user_info {
+    display: flex;
+    gap: 8px;
+}
+
+.wrapper_drawer {
+margin-top: 24px;
+}
+
+.exercises {
+margin-top: 24px;
+display: flex;
+flex-direction:column;
+gap: 24px;
+}
+
+.btn_wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 24px;
+    height: 40px;
+    background: #f0f0f0;
+    padding: 0 0 0 5px;
+}
+
+.add_btn {
+    color:#2F54EB;
+}
+
+.invite_btn {
+    background: #2F54EB;
+}
