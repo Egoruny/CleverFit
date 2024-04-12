@@ -106,9 +106,7 @@ const JoinTrening = () => {
         setSrc(UserSrc);
         setId(id);
         setUser(user);
-    };
-
-    const postInvate = () => {
+    };    const postInvate = () => {
 
         setOpenDrawer(false);
         dispatch(setUserId(user.id));
@@ -145,6 +143,9 @@ const JoinTrening = () => {
                         </Button>
                     }
                 >
+
+
+
                     <div className={style.drawer_header}>
                         <div className={style.user_info}>
                             <AvatarUser
@@ -186,6 +187,7 @@ const JoinTrening = () => {
                         </div>
                         <div className={style.btn_wrapper}>
                             <Button
+                            
                                 className={style.add_btn}
                                 type='text'
                                 icon={<PlusOutlined />}

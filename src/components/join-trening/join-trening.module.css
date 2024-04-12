@@ -65,6 +65,7 @@ gap: 24px;
 }
 
 .add_btn {
+   z-index: 10000;
     color:#2F54EB;
 }
 
