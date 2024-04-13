@@ -3,9 +3,7 @@ import { Button, Typography, Select, Table, Form } from 'antd';
 import { PlusOutlined, DownOutlined, MinusOutlined } from '@ant-design/icons';
 import { useState } from 'react';
 import { useAppSelector, useAppDispatch } from '@redux/configure-store';
-import moment from 'moment';
 import { isPastDate } from '@utils/constans/getPastDate';
-import { selectOptions } from '@utils/constans/select-options';
 import { getTraningCatalogsStart } from '@redux/slise/traning-catalogs-slise';
 import { updateTraning, deleteExercises } from '@redux/slise/traningList-slise';
 import {
@@ -170,16 +168,8 @@ const MyTreningContetnt = ({ catalog, treningList }) => {
         dispatch(getTraningCatalogsStart());
     }, [dispatch]);
 
-    const sordorder = ['ascend', 'descend'];
 
-    const onHeaderRow = (column, index) => {
-        return {
-            className: style.castom_header,
-            onClick: () => {
-                console.log(`Clicked header row ${index}`);
-            },
-        };
-    };
+
 
     return (
    <>
@@ -293,7 +283,6 @@ const MyTreningContetnt = ({ catalog, treningList }) => {
                     columns={columns}
                     showSorterTooltip={false}
                     size='small'
-                    onHeaderRow={onHeaderRow}
                     pagination={{
                         size: 'small',
                         defaultCurrent: 1,

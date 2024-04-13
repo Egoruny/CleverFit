@@ -28,6 +28,9 @@ const AvatarUser = ({alt,src,backgroundColor,name,surname,index,searchValue,isUs
         <p >
         {name} {surname}
             </p>
+        <p >
+ {surname}
+            </p>
 
         </div>
         </>

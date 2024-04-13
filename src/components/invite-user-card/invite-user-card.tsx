@@ -17,7 +17,7 @@ const InviteUserCard = ({ user }) => {
     const openModal = () => setShowModal(true)
     const closeModal = () => setShowModal(false)
 
-console.log(user?.training?.date)
+
     const acceptSendHandler = () => {
         const id = user?._id;
         const status = 'accepted';

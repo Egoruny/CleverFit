@@ -73,7 +73,6 @@ const MyTrningsPage = () => {
         <Content className={style.wrapper}>
             
             {catalogError && <CalendarModal />}
-            <div><Link to={'/main'}>Главная</Link></div>
             <Tabs items={tabsItems}  className={style.tabs_header}/>
         </Content>
         </>

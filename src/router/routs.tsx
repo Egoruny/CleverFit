@@ -38,6 +38,7 @@ export const App = () => {
             dispatch(setJwt(accessToken))
         }
     }, [accessToken,dispatch]);
+
     return (
         <>
             <Load />

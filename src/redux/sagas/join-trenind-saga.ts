@@ -35,7 +35,7 @@ function* getJoinUsersWorker() {
         Authorization: `Bearer ${jwt}`,
     };
     const type = yield select(treningUserTypeSelect)
-    console.log(type)
+
 let url = ''
     if(type){
     url = `${AxiosPaths.USER_JOINT_TRAINING_LIST}?trainingType=${type}`

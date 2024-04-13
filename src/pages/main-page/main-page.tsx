@@ -20,14 +20,16 @@ const MainPage: React.FC = () => {
 
     const sessionStorageJwt = useAppSelector(jwtSelect);
 
-    // useEffect(() => {
-    //     if (jwt === null && !sessionStorageJwt) {
-    //         navigate('/auth');
-    //     }
-    // }, [jwt, navigate, sessionStorageJwt]);
+    useEffect(() => {
+        if (jwt === null && !sessionStorageJwt) {
+            navigate('/auth');
+        }
+    }, [jwt, navigate, sessionStorageJwt]);
 
 
-
+useEffect(() => {
+    dispatch(getProfileStart())
+})
 
     return (
         <>

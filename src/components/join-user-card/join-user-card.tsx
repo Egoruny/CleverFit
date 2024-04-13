@@ -14,7 +14,7 @@ const JoinUserCard = ({ user, index, onChangeHandler, searchValue }) => {
     const isAccepted = user.status === inviteStaus.accepted;
     const isPending = user.status === inviteStaus.pending;
     const isRejected = user.status === inviteStaus.regected;
-console.log()
+
 
     return (
         <Card
@@ -78,17 +78,7 @@ console.log()
                     Создать тренировку
                 </Button>
                 <div className={style.trening_status}>
-                 <span>ожидает подтверждения</span>
-                </div>
-            </div>
-        </Card>
-    );
-};
-
-export default JoinUserCard;
-
-
-   {/* {user.status && (
+                  {user?.status && (
                         <>
                             <span>
                                 {' '}
@@ -102,4 +92,12 @@ export default JoinUserCard;
                                 <ExclamationCircleOutlined style={{ color: '#8C8C8C' }} />
                             )}
                         </>
-                    )} */}
+                    )} 
+                </div>
+            </div>
+        </Card>
+    );
+};
+
+export default JoinUserCard;
+

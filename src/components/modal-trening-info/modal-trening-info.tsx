@@ -9,7 +9,6 @@ const {Text} = Typography
 
 const ModalTrenngInfo = ({treningName,exesise,period,date,onClose}) => {
 
-  console.log(period)
 
     return (
       <Card

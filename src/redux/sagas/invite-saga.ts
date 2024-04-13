@@ -60,7 +60,7 @@ function* postInviteWorker() {
         Authorization: `Bearer ${jwt}`,
     };
 
-    console.log(body)
+   
 
     try {
         const { data } = yield call(instance.post, AxiosPaths.TRANING, body, { headers });
