@@ -21,9 +21,7 @@ const Auth = ({ tab = 'login' }: { tab?: AuthTab }) => {
 
     useEffect(() => {
         if (jwt) {
-            return function (){
                 navigate(Path.Main);
-            }
         }
     }, [jwt, navigate]);
 

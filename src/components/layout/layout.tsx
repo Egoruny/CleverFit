@@ -5,6 +5,7 @@ import { useWindowSize } from '@uidotdev/usehooks';
 import { useAppDispatch } from '@redux/configure-store';
 
 const LayOut: React.FC = () => {
+    console.log('layot')
     const dispatch = useAppDispatch();
     const screenWidth = useWindowSize();
     useEffect(() => {

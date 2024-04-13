@@ -25,10 +25,12 @@ import CalendarPage from '@pages/calendar-page/calendar-page';
 import ProfilePage from '@pages/profile-page/profile-page';
 import SettingsPage from '@pages/settings-page/settings-page';
 import MyTrningsPage from '@pages/my-trenings-page/my-trenings-page';
+
 export const App = () => {
     const dispatch = useAppDispatch()
     const [serchParams] = useSearchParams();
     const accessToken = serchParams.get('accessToken');
+
 
     useEffect(() => {
         if (accessToken) {
@@ -36,12 +38,12 @@ export const App = () => {
             dispatch(setJwt(accessToken))
         }
     }, [accessToken,dispatch]);
-
     return (
         <>
             <Load />
             <Routes>
-                <Route path={Path.Root} element={<LayOut />}>
+            <Route path='*' element={<Auth tab='login' />} />
+                <Route path='/' element={<LayOut />}>
                     <Route index={true} element={<Navigate to={Path.Login} />} />
                     <Route path={Path.Login} element={<Auth tab='login' />} />
                     <Route path={Path.Register} element={<Auth tab='register' />} />
@@ -78,7 +80,9 @@ export const App = () => {
 
                 <Route path={Path.ConfirmEmail} element={<ConfirmEmail />} />
                 <Route path={Path.ChangePasword} element={<ChangePasword />} />
+                
             </Routes>
+
         </>
     );
 };
