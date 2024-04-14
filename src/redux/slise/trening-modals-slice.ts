@@ -6,6 +6,7 @@ const initialState = {
     isOpenModal: false,
     prevData: moment().format('YY-MM'),
     modalStatus:CalendarModalStatus.TRAINING,
+    isModalError:false
 };
 
 const trningModals = createSlice({
@@ -20,10 +21,13 @@ const trningModals = createSlice({
         },
         setModalStatus(state,action) {
             state.modalStatus = action.payload
+        },
+        setModalError (state,action) {
+state.isModalError = action.payload
         }
     },
 });
 
-export const { togleModal,setPrevData,setModalStatus } = trningModals.actions;
+export const { togleModal,setPrevData,setModalStatus,setModalError } = trningModals.actions;
 
 export default trningModals.reducer;

@@ -8,10 +8,8 @@ import moment from 'moment';
 import ruRU from 'antd/lib/locale/ru_RU';
 import 'moment/locale/ru';
 import { useAppSelector, useAppDispatch } from '@redux/configure-store';
-import ErrorModal from '@pages/feedbacks-page/modals/error-modals/error-modals';
 import CalendarModal from '@pages/calendar-page/calendar-modal/calendar-error-modal/calendar-error-modal';
 import {
-    traningListErrorSelect,
     traningCatalogsErrorSelect,
     desctopVersionSelect,
     userTraningListSelect,
@@ -91,7 +89,6 @@ const CalendarContent: React.FC = () => {
         }
     };
 
-    const traningListError = useAppSelector(traningListErrorSelect);
     const traningCatalogError = useAppSelector(traningCatalogsErrorSelect);
     const updateError = useAppSelector(updateErrorSelect);
     const createError = useAppSelector(createErrorSelect);
@@ -101,7 +98,6 @@ const CalendarContent: React.FC = () => {
             {createError && <ClanedarNotVarificationModal />}
             {updateError && <ClanedarNotVarificationModal />}
             {traningCatalogError && <CalendarModal />}
-            {traningListError && <ErrorModal />}
             <ConfigProvider locale={ruRU}>
                 <Calendar
                     fullscreen={desctopVersion}

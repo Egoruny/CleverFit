@@ -1,5 +1,7 @@
 import { Drawer, Typography, Button } from 'antd';
-import { CloseOutlined, PlusOutlined, EditOutlined} from '@ant-design/icons';
+import { CloseOutlined, PlusOutlined, EditOutlined } from '@ant-design/icons';
+import { useAppSelector} from '@redux/configure-store';
+import {desctopVersionSelect } from '@redux/slise/select';
 
 
 import style from './drawer.module.css';
@@ -7,6 +9,8 @@ import style from './drawer.module.css';
 const { Title, Text } = Typography;
 
 const CastomDrawer = ({
+    closable,
+    title,
     open,
     onClose,
     date,
@@ -16,31 +20,23 @@ const CastomDrawer = ({
     isSettings,
     footerContent,
 }) => {
-
+    const desctopVersionT = useAppSelector(desctopVersionSelect);
     return (
         <Drawer
-            data-test-id='tariff-sider'
-            // data-test-id='modal-drawer-right'
-            width={desctopVersion ? 408 : '100%'}
-            title={
-                !isEdit ? (
-                    <Title level={4}>
-                        {isSettings ? 'Сравнить тарифы' : 'Добавление упражнений'}
-                    </Title>
-                ) : (
-                    <Title level={4}>Редактирование</Title>
-                )
-            }
+            data-test-id='modal-drawer-right'
+            width={desctopVersionT ? 408 : '100%'}
+            title={<Title level={4}>{title}</Title>}
             destroyOnClose={true}
-            closable={true}
+            closable={closable}
             placement='right'
             open={open}
             onClose={onClose}
             mask={false}
+            maskClosable
             closeIcon={
                 !isEdit ? (
                     <PlusOutlined
-                        style={{ color: '#000000', display: isSettings ? 'none' : '' }}
+                        style={{ color: '#000000'}}
                     />
                 ) : (
                     <EditOutlined />
@@ -56,7 +52,6 @@ const CastomDrawer = ({
             }
             footer={<div className={style.footer_content}>{footerContent}</div>}
         >
-        
             {children}
         </Drawer>
     );

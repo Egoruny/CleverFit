@@ -1,0 +1,54 @@
+.container_user {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 20px 20px 12px;
+margin-bottom: 8px;
+}
+
+.avatar_user {
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+width:  174px;
+height: 96px;
+gap: 12px;
+}
+
+.date {
+font-family: 'Inter';
+font-size: 12px;
+font-weight: 400;
+line-height: 15.6px;
+
+}
+
+.title {
+ max-width: 780px;
+ word-wrap: break-word;
+ 
+}
+
+.user_info {
+    position: relative;
+}
+
+.btn_wrapper {
+    max-width: 190px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.show_detalis_trening_btn {
+    padding:0;
+}
+
+.trein_together {
+font-family: 'Inter';
+font-size: 14px;
+font-weight: 400;
+line-height: 18.2px;
+text-align: center;
+    background-color: #2F54EB;
+}

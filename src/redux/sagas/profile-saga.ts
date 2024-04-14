@@ -24,14 +24,14 @@ import {
 
 function* getUserWorker() {
     const jwt: boolean | string = yield select(jwtSelect);
+    const localStorageJwt:string = yield localStorage.getItem('jwt');
     const headers = {
-        Authorization: `Bearer ${jwt}`,
+        Authorization: `Bearer ${jwt || localStorageJwt}`,
     };
     try {
         const { data } = yield call(instance.get, AxiosPaths.CURRENT_USER, { headers });
         yield put(setProfile(data));
     } catch (error) {
-     
         yield put(push(Path.Login));
     }
 }

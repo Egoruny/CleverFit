@@ -35,7 +35,7 @@ const CalendarExercisesModal = ({
     const dispatch = useAppDispatch();
     const selectedTraning = useAppSelector(selectedTraningSelect);
     const catalogTrening = useAppSelector(traningCatalogsSelect);
-    const isEmptyExesises = !!selectedTraning?.exercises[0].name;
+    const isEmptyExesises = !!selectedTraning?.exercises[0]?.name;
     const disabledAddTraning = !selectedTraning.name;
     const disebledExerciseTraning = !selectedTraning?.name || isEmptyExesises;
   

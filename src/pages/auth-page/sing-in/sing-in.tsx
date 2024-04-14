@@ -96,11 +96,11 @@ const SingIn = () => {
                 </Form.Item>
 
                 <Form.Item>
-                    <Form.Item name='remember' valuePropName='checked' noStyle>
+                    <Form.Item name='remember' noStyle>
                         <Checkbox
                             data-test-id='login-remember'
                             className={style.form_checkbox}
-                            checked={false}
+                            checked={isRemember}
                             onChange={rememberUser}
                         >
                             Запомнить меня

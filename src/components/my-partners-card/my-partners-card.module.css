@@ -1,0 +1,55 @@
+.partners_card {
+    max-width: 240px;
+}
+
+.card_header {
+    display: flex;
+    gap: 8px;
+}
+
+
+.trening_type {
+    display: flex;
+    gap: 16px;
+    margin-top: 8px;
+}
+
+.trening_type_modal {
+    display: flex;
+    gap: 16px;
+}
+
+.modal_header {
+display: flex;
+justify-content: space-between;
+width: 100%;
+}
+
+.avatar_modal {
+    display: flex;
+    gap: 8px;
+}
+
+.modal_footer {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    margin-top: 24px;
+}
+
+
+.accepted_trenig_modal {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.text {
+color: #262626;
+font-family: 'Inter';
+font-size: 12px;
+font-weight: 400;
+line-height: 15.6px;
+text-align: left;
+
+}

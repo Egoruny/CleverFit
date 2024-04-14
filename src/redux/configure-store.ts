@@ -14,6 +14,14 @@ import updateTreningSlice from './slise/update-trening-slice';
 import appSlise from './slise/app-slice';
 import profileSlice from './slise/profile-slice';
 import tariffSlice from './slise/tariff-slice';
+import myTreningsSlice from './slise/my-trenings-slice';
+import joinTreningSlice from './slise/join-trening-slice';
+import invateSlice from './slise/invite-slice'
+import joinTeningRequestsSlice from './slise/join-tening-requests-slice';
+import sendRequestSlice from './slise/send-request-slice';
+import cansleTreningSlise from './slise/cansle-trening-slise';
+import createMyTreningSlice from './slise/create-my-trening-slice';
+import updateMyTreningSlice from './slise/update-my-trening-slice';
 import { runSaga } from './index';
 
 const sagaMiddleware = createSagaMiddleware();
@@ -25,17 +33,25 @@ const { createReduxHistory, routerMiddleware, routerReducer } = createReduxHisto
 
 export const store = configureStore({
     reducer: combineReducers({
-        app:appSlise,
+        app: appSlise,
         auth: AuthReducer,
         feedBack: feedbacksSlise,
         postFeedbakc: postFeedbacSlice,
-        traningList:traningListSlise,
-        traningCatalogs:traningCatalogsSlise,
-        treningModals:treningModalsSlice,
-        createTraning:createTraningSlice,
-        updateTrening:updateTreningSlice,
-        profile:profileSlice,
-        tarif:tariffSlice,
+        traningList: traningListSlise,
+        traningCatalogs: traningCatalogsSlise,
+        treningModals: treningModalsSlice,
+        createTraning: createTraningSlice,
+        updateTrening: updateTreningSlice,
+        profile: profileSlice,
+        tarif: tariffSlice,
+        myTrenings: myTreningsSlice,
+        createMyTrening:createMyTreningSlice,
+        updateMyTrening:updateMyTreningSlice,
+        joinTrening:joinTreningSlice,
+        invate:invateSlice,
+        joinTeningRequests:joinTeningRequestsSlice,
+        sendRequest:sendRequestSlice,
+        cansleTrening:cansleTreningSlise,
         router: routerReducer,
     }),
     middleware: (getDefaultMiddleware) =>

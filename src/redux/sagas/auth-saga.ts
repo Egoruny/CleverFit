@@ -3,6 +3,7 @@ import { AxiosPaths } from '../../axios/axiosPaths';
 import { Path } from '../../utils/constans/url';
 import { call, put, takeLatest } from 'redux-saga/effects';
 import { getProfileStart } from '@redux/slise/profile-slice';
+import { getJoinTeningRequestsStart } from '@redux/slise/join-tening-requests-slice';
 import {
     setJwt,
     postLoginStart,
@@ -33,8 +34,9 @@ function* loginWorker({ payload: { password, email, isRemember, location } }) {
         if (isRemember) {
             localStorage.setItem('jwt', data.accessToken);
         }
-
         yield put(postLoginSaccses());
+        yield put(getJoinTeningRequestsStart());
+        
     } catch (err) {
         yield put(postLoginError());
         yield put(push(Path.ErrorLogin, location));

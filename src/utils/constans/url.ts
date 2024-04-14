@@ -21,4 +21,5 @@ export const Path = {
     Calendar: '/main/calendar',
     Profile: '/profile',
     Settings: '/settings',
+    MyTrenings:'/training',
 } as const;

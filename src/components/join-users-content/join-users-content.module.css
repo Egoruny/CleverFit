@@ -1,0 +1,35 @@
+.wrapper {
+    margin-top: 8px;
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    gap: 160px;
+}
+
+.go_back {
+    gap: 16px;
+    display: flex;
+    align-items: center;
+}
+
+.searh_input {
+    max-width: 480px;
+}
+
+.join_list {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 24px;
+    max-width: 1050px;
+}
+
+:global(.ant-list-items) {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+}
+:global(.ant-list-pagination) {
+    text-align: left;
+}

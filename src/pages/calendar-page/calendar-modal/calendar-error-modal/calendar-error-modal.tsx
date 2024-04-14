@@ -7,9 +7,16 @@ import { getTraningCatalogsStart } from '@redux/slise/traning-catalogs-slise';
 
 const { Text } = Typography;
 
-const CalendarModal = () => {
+type CalendarModalProps ={
+    updateHandler?:() => void
+}
+
+
+
+const CalendarModal = ({updateHandler}) => {
     const [canselModal, setCanselModal] = useState(true);
     const dispath = useAppDispatch();
+    
 
     const handleCansel = () => setCanselModal(false);
     const handleRepeatRequest = () => dispath(getTraningCatalogsStart());
@@ -26,7 +33,7 @@ const CalendarModal = () => {
                     type='primary'
                     size='middle'
                     className={style.modal_footer_btn}
-                    onClick={handleRepeatRequest}
+                    onClick={updateHandler?updateHandler:handleRepeatRequest}
                 >
                     Обновить
                 </Button>,
@@ -36,11 +43,14 @@ const CalendarModal = () => {
             <div className={style.modal_header}>
                 <Button
                     data-test-id='modal-error-user-training-button-close'
+                 
                     icon={<CloseCircleOutlined className={style.icon_btn_cansel} />}
                     onClick={handleCansel}
                     className={style.cansel_btn}
                 ></Button>
-                <div data-test-id='modal-error-user-training-title'>
+                <div 
+                data-test-id='modal-error-user-training-title'
+                >
                     <p>При открытии данных</p>
                     <p style={{ marginBottom: '8px' }}>приозошла ошибка</p>
                     <Text type='secondary' data-test-id='modal-error-user-training-subtitle'>

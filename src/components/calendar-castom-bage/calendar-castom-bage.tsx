@@ -1,6 +1,6 @@
 import { Badge, Button, Typography } from 'antd';
 import { EditOutlined } from '@ant-design/icons';
-
+import { bageColors } from '@utils/constans/bageColors';
 import style from './calendar-castom-bage.module.css';
 
 const { Text } = Typography;
@@ -24,13 +24,7 @@ const CalendarCastomBage = ({
     isImplementation,
     openedInDrawer
 }: BageProps) => {
-    const bageColors = new Map([
-        ['Силовая', 'yellow'],
-        ['Ноги', 'red'],
-        ['Руки', 'cyan'],
-        ['Грудь', 'green'],
-        ['Спина', 'orange'],
-    ]);
+ 
 
     return (
         <>

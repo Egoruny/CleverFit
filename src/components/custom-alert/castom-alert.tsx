@@ -5,14 +5,17 @@ import style from './castom-alert.module.css'
 
 type Props = {
     message: string;
+    onClose?:() => void
+    dataTest?:string
 };
 
-const CastomAlert = ({ message }: Props) => (
+const CastomAlert = ({ message,onClose,dataTest }: Props) => (
     <div 
     className={style.alert_wrapper}
     >
         <Alert
-            data-test-id='alert'
+            onClose={onClose}
+            data-test-id={dataTest}
             message={message}
             type='success'
             className={style.alert}
