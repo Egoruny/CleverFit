@@ -1,20 +1,62 @@
-.switcher {
-    padding-left: 3px;
+.switch_btn {
     position: absolute;
+    filter: drop-shadow(1px 1px 1px rgba(0, 0, 0, 0.15));
+    width: 100%;
+    height: 100%;
+    border: none;
+    background-color:inherit;
+}
+.switcher {
+    display: flex;
+    cursor: pointer;
+    padding-left: 2px;
     height: 66px;
     width: 20px;
-    top: 50%;
     transform: translateY(-50%);
-    left: 99%;
+    left: 100%;
     background-color: #fff;
-    border-right: 33px;
-    clip-path: polygon(0 0, 100% 20%, 100% 80%, 0% 100%);
-    box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.15);
+    /* clip-path: polygon(0 0, 100% 20%, 100% 80%, 0% 100%); */
+    position: relative;
+    clip-path: polygon(0 0, 100% 10%, 100% 90%, 0% 100%);
+    top: 50%;
     z-index: 1;
 }
 
+.SwitchPolygon {
+    width: 20px;
+    height: 66px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color:#fff;
+    clip-path: polygon(0 0, 100% 10%, 100% 90%, 0% 100%);
+    cursor: pointer;
+}
+
+.Switch {
+    position: absolute;
+    top: 50%;
+    left: 100%;
+    translate: 0 -50%;
+    filter: drop-shadow(1px 1px 1px rgba(0, 0, 0, 0.15));
+    border: none;
+    margin: 0;
+    padding: 0;
+    width: auto;
+    overflow: visible;
+    background: transparent;
+    color: inherit;
+    font: inherit;
+    line-height: normal;
+    -webkit-font-smoothing: inherit;
+    -moz-osx-font-smoothing: inherit;
+    -webkit-appearance: none;
+    appearance: none;
+}
+
+
 @media (max-width: 360px) {
-    .switcher {
+    .Switch,.SwitchPolygon {
         height: 48px;
         width: 32px;
         top: 48px;

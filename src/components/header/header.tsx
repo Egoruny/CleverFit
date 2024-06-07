@@ -1,5 +1,6 @@
 import { PageHeader, Button, Typography } from 'antd';
 import { getTariffsStart } from '@redux/slise/tariff-slice';
+import { UseMobileVersion } from '@hooks/use-mobile-version';
 import { useAppDispatch } from '@redux/configure-store';
 import { SettingOutlined } from '@ant-design/icons';
 import { routes } from '../../variables';
@@ -8,18 +9,15 @@ import style from './header.module.css';
 
 const { Title } = Typography;
 
-const Header: React.FC = () => {
-const dispatch = useAppDispatch()
-
+const Header = () => {
+    const dispatch = useAppDispatch();
+    const isMobileVersion = UseMobileVersion();
     const onClickSettings = () => dispatch(getTariffsStart());
 
     return (
         <>
-            <PageHeader
-                style={{ fontFamily: "'Inter','sans-serif'", background: '#f0f5ff' }}
-                breadcrumb={{ routes }}
-            >
-                <div style={{ display: 'flex', justifyContent: 'space-between' }}>
+            <PageHeader style={{ background: '#f0f5ff' }} breadcrumb={{ routes }}>
+                <div className={style.page_header}>
                     <Title
                         style={{
                             marginBottom: 0,
@@ -36,6 +34,7 @@ const dispatch = useAppDispatch()
                         data-test-id='header-settings'
                         icon={<SettingOutlined />}
                         className={style.set_button}
+                        shape={isMobileVersion ? 'circle' : 'default'}
                         size='middle'
                         type='text'
                     >

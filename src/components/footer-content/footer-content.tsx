@@ -52,7 +52,7 @@ const FooterContent: React.FC = () => {
                             icon={<AppleFilled />}
                             size='small'
                         >
-                            Android OS
+                        Apple IOS
                         </Button>
                     </div>
                 </Card>

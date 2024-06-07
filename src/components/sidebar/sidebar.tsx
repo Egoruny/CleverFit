@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { UseMobileVersion } from '@hooks/use-mobile-version';
 import style from './sidebar.module.css';
 import { Layout } from 'antd';
 const { Sider } = Layout;
@@ -10,11 +11,12 @@ import MenuLogo from '@components/menu-logo/menu-logo';
 
 const Sidebar: React.FC = () => {
     const [collapsed, setCollapsed] = useState(true);
-    const screenWidth = window.innerWidth;
+    const isMobileVersion = UseMobileVersion()
+    
     return (
         <Sider
             collapsedWidth={64}
-            width={screenWidth === 360 ? 106 : 208}
+            width={isMobileVersion ? 106 : 208}
             trigger={<CastomTrigger />}
             collapsible
             collapsed={collapsed}

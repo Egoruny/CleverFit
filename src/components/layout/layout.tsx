@@ -4,12 +4,14 @@ import { setDesctopVersion } from '@redux/slise/app-slice';
 import { useWindowSize } from '@uidotdev/usehooks';
 import { useAppDispatch } from '@redux/configure-store';
 
+const desctopVersion = 830;
+
 const LayOut: React.FC = () => {
 
     const dispatch = useAppDispatch();
     const screenWidth = useWindowSize();
     useEffect(() => {
-        Number(screenWidth.width) > 830
+        Number(screenWidth.width) > desctopVersion
             ? dispatch(setDesctopVersion(true))
             : dispatch(setDesctopVersion(false));
     }, [dispatch, screenWidth]);
